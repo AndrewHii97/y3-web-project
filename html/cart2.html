@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CartPageTest</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>cart</title>
+    <link rel="stylesheet" type="text/css" id="applicationStylesheet" href="../css/cart2.css" />
+    <script src="../js/cart.js"></script>
+</head>
+
+<body>
+    <!-- Start of BannerBox -->
+    <section id="BannerBox">
+        <img id="logo" src="../src/logo_A1_Rectangle_4_pattern.png" alt="logo.png">
+        <div class="NaviGroup">
+            <div class="NaviBtn">
+                <img src="../src/book_icon_A1_Rectangle_15_pattern.png" alt="book_icon.png">
+            </div>
+            <div class="NaviBtn">
+                <img src="../src/cart_A1_Rectangle_13_pattern.png" alt="cart_icon.png">
+            </div>
+            <div class="NaviBtn">
+                <img src="../src/login_avatar_A1_Rectangle_11_pattern.png" alt="login_cion.png">
+            </div>
+        </div>
+    </section>
+    <!-- End of BannerBox -->
+    <section id="OuterCart">
+        <div id="InnerCart">
+            <!-- back to category or search page require hyperlink added -->
+            <div id=TextContainer><a id="BackText" href="../html/cart2.html">Continue Shopping</a></div>
+            <!-- form for user to manipulate detail-->
+            <form action="../php/submit.php" method="POST">
+                <!-- start of cart table-->
+                <table id=CartTable>
+                    <thead>
+                        <tr>
+                            <th>Book Name</th>
+                            <th>Detail</th>
+                            <th>Date</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <!-- insert all books item here  -->
+                    <tbody id="CartBody">
+                    </tbody>
+                </table>
+                <!-- end of table -->
+                <!--table for total amound -->
+                <table id="totalTable">
+                    <thead>
+                        <tr>
+                            <th>Total</th>
+                            <th>AmountHere</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th></th>
+                            <th id="amount"></th>
+                        </tr>
+                    </tbody>
+                </table>
+                <input id="SubmitButton" type="submit" value="🔒Checkout">
+            </form>
+
+        </div>
+    </section>
+    <p id="demo"></p>
+    <script>
+        requestJson();
+    </script>
+</body>
+
+</html>
+
+<!-- 
+    regarding submit multiple data of same name 
+    https://www.php.net/manual/en/reserved.variables.post.php
+    https://stackoverflow.com/questions/7880619/multiple-inputs-with-same-name-through-post-in-php
+    https://stackoverflow.com/questions/2203430/posting-form-fields-with-same-name-attribute
+
+    or simply just pack into json before sending then switch to another page 
+    window.location.href = "URL";
+
+
+-->
