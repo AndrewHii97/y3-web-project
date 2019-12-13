@@ -23,7 +23,7 @@ $conn->close();
 <body>
 	<!-- <br>Home/BookStore/BookName -->
 	<div id="book">
-		<img id="img" src="<?php echo $data["url"] ?>"><br>
+		<img id="img" src="../<?php echo $data["url"] ?>"><br>
 		Name: <?php echo $data["bookname"] ?><br>
 		Author: <?php echo $data["author"] ?><br>
 		Price: RM<?php echo $data["price"] ?><br>
