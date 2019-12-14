@@ -17,6 +17,7 @@ session_start();
   <br><a href="html/cart2.html">cart</a><br>
   <a href="html/login.html">login</a><br>
   Hi <?php echo $_SESSION['username']?>!<br>
+  <a href="php/profile.php">profile</a><br>
   NEW ARRIVAL<br>
   <div id="book1">
     <img id="img1" src="" onclick="sendForm(1)">
