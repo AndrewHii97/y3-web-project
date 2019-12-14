@@ -45,7 +45,7 @@
         $servername = "localhost";
         $username="root";
         $password="";
-        $dbname="brsp_schema";
+        $dbname="brsp";
 
         //$id = $_SESSION["id"];# obtain user id from session
         $id = "2"; # stub 

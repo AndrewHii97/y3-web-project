@@ -39,7 +39,7 @@
          $servername = "localhost";
          $username="root";
          $password="";
-         $dbname="brsp_schema";
+         $dbname="brsp";
 
          //Create connection
         $conn = new mysqli($servername,$username,$password,$dbname);
@@ -74,7 +74,7 @@
     ?>
 
     <table id="bookOwned">
-        <caption>Books Owned</caption>
+        <caption><h1><b>Books Owned</b></h1></caption>
         <tr>
             <th>Book</th>
             <th>Book Name</th>
@@ -106,7 +106,7 @@
                 //please style the button so it look like a link not a button 
                 echo
                 "<tr>
-                    <td><img width='50%'  alt='img.png' src='$bookURL'></td>
+                    <td><img width='30%'  alt='$bookURL' src='$bookURL'></td>
                     <td>
                         <form method='post' action='bookUpdate.php'>
                             <input type='hidden' name='bookid' value='$bookId'>
@@ -116,8 +116,8 @@
                     <td>$bookGenre</td>
                     <td>$bookAuthor</td>
                     <td>$bookPublisher</td>
-                    <td>$bookPrice</td>
-                    <td>$bookRentRate</td>
+                    <td>RM $bookPrice</td>
+                    <td>RM $bookRentRate</td>
                     <td>$bookModified</td>
                     <td>
                         <form method='post' action=''>
@@ -130,8 +130,106 @@
             }
         ?>
     </table>
-
     <button><a href="bookUpdate.php">Add Book</a></button>
+
+
+    <!-- table for book rented -->
+    <?php
+        
+        $id="2";
+        $sql=  
+        "select b.BOOKID,b.BOOKNAME,b.GENRE,b.AUTHOR,b.PUBLISHER,b.url,acc.username, 
+        br.RENT_DATE,br.RETURNED_DATE,br.RENT_PRICE,br.RENT_RATE from  
+        bookrent as br join (book as b join account as acc on  b.bookownerid =acc.userid) 
+        on br.BOOKID = b.BOOKID where br.userid='$id'";
+        $result = $conn->query($sql);
+        $books = $result->fetch_all($resulttype = MYSQLI_ASSOC);
+
+    ?>
+
+    <table>
+        <caption><h1><b>The book I rented</b><h1></caption>
+        <tr>
+            <th>BookImage</th>
+            <th>BookName</th>
+            <th>BookOwner</th>
+            <th>BookRentRate</th>
+            <th>BorrowDate</th>
+            <th>DueDate</th>
+            <th>RentPrice</th>
+        </tr>
+        <?php
+            foreach( $books as $book ){
+                #retrive information from the array 
+                $bookId = $book['BOOKID'];
+                $bookName =  $book['BOOKNAME'];
+                $bookAuthor = $book['AUTHOR'];
+                $bookGenre = $book['PUBLISHER'];
+                $bookRentRate = $book['RENT_RATE'];
+                $bookURL = PREFIX.$book['url'];
+                $bookPublisher =$book['PUBLISHER'];
+                $bookOwner =$book['username'];
+                $return = $book['RENT_DATE'];
+                $rent = $book['RETURNED_DATE'];
+                $rentPrice = $book['RENT_PRICE'];
+
+                echo " 
+                <tr>
+                    <td><img width='50%' src='$bookURL' alt='$bookURL'></td>
+                    <td>
+                        <form method='post' action='bookDetail.php'>
+                            <input type='hidden' name='bookid' value='$bookId'>
+                            <input type='submit' value='$bookName'>
+                        </form>  
+                    </td> 
+                    <td>$bookOwner</td>
+                    <td>RM $bookRentRate</td>
+                    <th>$rent</th>
+                    <th>$return</th>
+                    <th>RM $rentPrice</th>
+                </tr>
+                ";
+
+            }
+           
+        ?>
+    </table>
+
+    <table>
+        <caption><b><h1>book sold<h1></b></caption>
+        <tr>
+            <th>bookImage</th>
+            <th>bookName</th>
+            <th>bookPrice</th>
+        </tr>
+        <?php
+            $sql = "SELECT b.BOOKID,b.URL,b.BOOKNAME,bb.SELL_PRICE FROM 
+            bookbuy as bb join book as b on b.BOOKID = bb.BOOKID WHERE b.BOOKOWNERID='$id'";
+            $result = $conn->query($sql);
+            $books = $result->fetch_all($resulttype = MYSQLI_ASSOC);
+
+            foreach($books as $book ){
+                $bookId = $book['BOOKID'];
+                $bookName =  $book['BOOKNAME'];
+                $bookURL = PREFIX.$book['URL'];
+                $sellPrice = $book['SELL_PRICE'];
+
+                echo " 
+                <tr>
+                    <td><img width='50%' src='$bookURL' alt='$bookURL'></td>
+                    <td>$bookName</td>
+                    <th>RM $sellPrice</th>
+                </tr>
+                ";
+            }
+            
+            
+        ?>
+
+
+
+    </table>
+
 
 
 
