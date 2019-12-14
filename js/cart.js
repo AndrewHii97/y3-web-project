@@ -255,6 +255,8 @@ function changeTotal(){
     var totalTable = document.getElementById("amount");
     var total = calculateTotal();
     amount.innerHTML = "RM"+total;
+    globalTotal = total;
+    // console.log(test);
     console.log("total changed");
 
 

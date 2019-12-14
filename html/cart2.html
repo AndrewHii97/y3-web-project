@@ -57,7 +57,6 @@
                         </tr>
                     </thead>
                     <tbody>
-                        
                         <tr>
                             <th></th>
                             <th id="amount"></th>
@@ -67,6 +66,9 @@
                 <div id="paypal-button"></div>
                 <script src="https://www.paypalobjects.com/api/checkout.js"></script>
                 <script>
+
+                
+                var globalTotal;
                     paypal.Button.render({
                         // Configure environment
                         env: 'sandbox',
@@ -86,12 +88,13 @@
                         // Enable Pay Now checkout flow (optional)
                         commit: true,
 
+
                         // Set up a payment
                         payment: function(data, actions) {
                             return actions.payment.create({
                                 transactions: [{
                                 amount: {
-                                    total: '0.01',
+                                    total: globalTotal.toString(),
                                     currency: 'MYR'
                                 }
                                 }]
