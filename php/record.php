@@ -130,7 +130,7 @@
             }
         ?>
     </table>
-    <button><a href="bookUpdate.php">Add Book</a></button>
+    <button><a href="addBook.php">Add Book</a></button>
 
 
     <!-- table for book rented -->
