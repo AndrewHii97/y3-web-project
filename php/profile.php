@@ -127,7 +127,7 @@
             <div class='form-row'>
                 <input type="submit" value="edit"></input>
                 <a href="../html/password.html">Change Password</a>
-                <a href="../php/record.html">Record</a>
+                <a href="record.php">Record</a>
             </div>
         </form>
 
