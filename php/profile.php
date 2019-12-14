@@ -4,7 +4,7 @@
 //     header('Location:../html/login.html$message="Please_login_first" ');
 //     exit();
 // }else{
-//     session_start();
+    session_start();
 // }
 ?>
 
@@ -46,9 +46,9 @@
         $username="root";
         $password="";
         $dbname="brsp";
-
-        //$id = $_SESSION["id"];# obtain user id from session
-        $id = "2"; # stub 
+        echo $_SESSION['id'];
+        $id = $_SESSION["id"];# obtain user id from session
+        // $id = "2"; # stub 
 
         $conn = new mysqli($servername,$username,$password,$dbname);# establish database connection 
         #check if connection successfully established 

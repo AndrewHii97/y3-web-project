@@ -32,5 +32,5 @@ echo "<script type='text/javascript'>alert('Invalid Login Credentials')</script>
 //echo "Invalid Login Credentials";
 }
 }
-close() $connection;
+close();
 ?>

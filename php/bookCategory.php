@@ -10,14 +10,14 @@ session_start();
 </head>
 
 <body>
-  This is index.html of BRSP.
+  This is bookCategory of BRSP.
   <br>
   Navigation bar: <br>
-  <a href="php/bookCategory.php">Book category</a>
-  <br><a href="html/cart2.html">cart</a><br>
-  <a href="html/login.html">login</a><br>
+  <a href="bookCategory.php">Book category</a>
+  <br><a href="../html/cart2.html">cart</a><br>
+  <a href="../html/login.html">login</a><br>
   Hi <?php echo $_SESSION['username']?>!<br>
-  <a href="php/profile.php">profile</a><br>
+  <a href="profile.php">profile</a><br>
   NEW ARRIVAL<br>
   <div id="book1">
     <img id="img1" src="" onclick="sendForm(1)">
@@ -61,30 +61,30 @@ session_start();
     xmlhttp.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
         myObj = JSON.parse(this.responseText);
-
+var test = 'img1';
         //book1
         document.getElementById("bookname1").innerHTML = myObj[0].bookname;
         document.getElementById("price1").innerHTML = "Price: RM" + myObj[0].price;
-        document.getElementById("img1").src = myObj[0].url;
+        document.getElementById(test).src = "../" + myObj[0].url;
 
         //book2
         document.getElementById("bookname2").innerHTML = myObj[1].bookname;
         document.getElementById("price2").innerHTML = "Price: RM" + myObj[1].price;
-        document.getElementById("img2").src = myObj[1].url;
+        document.getElementById("img2").src = "../" + myObj[1].url;
 
         //book3
         document.getElementById("bookname3").innerHTML = myObj[2].bookname;
         document.getElementById("price3").innerHTML = "Price: RM" + myObj[2].price;
-        document.getElementById("img3").src = myObj[2].url;
+        document.getElementById("img3").src = "../" + myObj[2].url;
 
         //book4 
         document.getElementById("bookname4").innerHTML = myObj[3].bookname;
         document.getElementById("price4").innerHTML = "Price: RM" + myObj[3].price;
-        document.getElementById("img4").src = myObj[3].url;
+        document.getElementById("img4").src = "../" + myObj[3].url;
 
       }
     };
-    xmlhttp.open("POST", "php/index_background.php", true);
+    xmlhttp.open("POST", "bookCategory_background.php", true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send();
     // xmlhttp.send("x=" + dbParam);
