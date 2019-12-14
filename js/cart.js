@@ -1,5 +1,5 @@
 
-document.cookie="userid=sad";
+document.cookie="userid=";
 /*
     array of book object 
     object property 
