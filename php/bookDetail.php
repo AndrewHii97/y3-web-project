@@ -1,3 +1,5 @@
+<!-- <?php
+session_start();?> -->
 <?php
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 $conn = new mysqli("localhost", "root", "", "brsp");
@@ -14,13 +16,18 @@ $data = $result->fetch_assoc();
 // echo "<br>bookid: ".$data["bookname"];
 $conn->close();
 ?>
-
 <html>
 <head>
 	<meta charset="utf-8">
 	<title>Book Detail</title>
 </head>
 <body>
+	
+<?php
+// Echo session variables that were set on previous page
+echo "Favorite color is " . $_SESSION["favcolor"] . ".<br>";
+echo "Favorite animal is " . $_SESSION["favanimal"] . ".";
+?>
 	<!-- <br>Home/BookStore/BookName -->
 	<div id="book">
 		<img id="img" src="../<?php echo $data["url"] ?>"><br>

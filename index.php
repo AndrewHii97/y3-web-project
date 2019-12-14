@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+session_start();
+?>
+
 <html>
 
 <head>
@@ -13,6 +16,7 @@
   <a href="bookCategory.html">Book category</a>
   <br><a href="html/cart2.html">cart</a><br>
   <a href="html/login.html">login</a><br>
+  Hi <?php echo $_SESSION['username']?>!<br>
   NEW ARRIVAL<br>
   <div id="book1">
     <img id="img1" src="" onclick="sendForm(1)">
@@ -36,7 +40,7 @@
   </div>
 
   <div>
-    <form id="myForm" action="php/bookDetail.php" method="get">
+    <form id="myForm" action="php/bookDetail.php" method="GET">
       <input hidden id="data" type="text" name="x" value="">
       <br><br>
       <input hidden type="submit" value="Submit">
@@ -79,7 +83,7 @@
 
       }
     };
-    xmlhttp.open("POST", "php/index.php", true);
+    xmlhttp.open("POST", "php/index_background.php", true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send();
     // xmlhttp.send("x=" + dbParam);
