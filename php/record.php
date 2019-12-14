@@ -221,14 +221,11 @@
                     <th>RM $sellPrice</th>
                 </tr>
                 ";
-            }
-            
-            
+            }      
         ?>
-
-
-
     </table>
+
+    <button>Back</button>
 
 
 
