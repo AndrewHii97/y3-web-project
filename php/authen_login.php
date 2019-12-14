@@ -23,6 +23,9 @@ if ($count == 1){
 //echo "Login Credentials verified";
 $_SESSION["id"] = $data['USERID'];
 $_SESSION["username"] = $data['USERNAME'];
+$cookie_name = "userid";
+$cookie_value = $data['USERID'];
+setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 echo "Session variables are set.";
 header('Location:../index.php');
 echo "<script type='text/javascript'>alert('Login Credentials verified')</script>";

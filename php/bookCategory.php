@@ -18,7 +18,33 @@ session_start();
   <a href="../html/login.html">login</a><br>
   Hi <?php echo $_SESSION['username']?>!<br>
   <a href="profile.php">profile</a><br>
-  NEW ARRIVAL<br>
+  BOOK CATEGORY<br>
+  <span id="all" onclick="sendCategory('')">all</span>
+  <span id="Adventure" onclick="sendCategory('Adventure')">Adventure</span>
+  <span id="Fable" onclick="sendCategory('Fable')">Fable</span>
+  <span id="Horror" onclick="sendCategory('Horror')">Horror</span>
+  <span id="Music" onclick="sendCategory('Music')">Music</span>
+  <span id="Parenting" onclick="sendCategory('Parenting')">Parenting</span>
+  <span id="Romance" onclick="sendCategory('Romance')">Romance</span>
+  <span id="Sci-Fi" onclick="sendCategory('Sci-Fi')">Sci-Fi</span>
+  <span id="Self-Help" onclick="sendCategory('Self-Help')">Self-Help</span>
+  <span id="Suspense" onclick="sendCategory('Suspense')">Suspense</span>
+
+  <?php
+    for($i=0; $i<10; $i++){
+        echo '
+        <div id="book.">
+            <img id="img." src="" onclick="sendForm(.)">
+            <p id="bookname."></p>
+            <span id="price."></span>
+        </div>;
+        '
+    }
+  ?>
+
+
+
+
   <div id="book1">
     <img id="img1" src="" onclick="sendForm(1)">
     <p id="bookname1"></p>
@@ -41,7 +67,7 @@ session_start();
   </div>
 
   <div>
-    <form id="myForm" action="php/bookDetail.php" method="GET">
+    <form id="myForm" action="bookDetail.php" method="GET">
       <input hidden id="data" type="text" name="x" value="">
       <br><br>
       <input hidden type="submit" value="Submit">
@@ -49,19 +75,26 @@ session_start();
   </div>
 
   <script>
+    // var obj
+    var xmlhttp, myObj, x, txt = "", dbParam;
     function sendForm(booknum) {
       document.getElementById("data").value = myObj[booknum - 1].bookid;
       document.getElementById("myForm").submit();
     }
-    // var obj
-    var xmlhttp, myObj, x, txt = "";
+
+    function sendCategory(cat) {
+        var data = '?x=' + cat;
+        callAjax(data);
+    }
 
     // dbParam = JSON.stringify(obj);
+    function callAjax(dbparam){
     xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
         myObj = JSON.parse(this.responseText);
-var test = 'img1';
+        // console.log(myObj);
+    var test = 'img1';
         //book1
         document.getElementById("bookname1").innerHTML = myObj[0].bookname;
         document.getElementById("price1").innerHTML = "Price: RM" + myObj[0].price;
@@ -84,10 +117,12 @@ var test = 'img1';
 
       }
     };
-    xmlhttp.open("POST", "bookCategory_background.php", true);
+    xmlhttp.open("GET", "bookCategory_background.php"+dbparam, true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send();
     // xmlhttp.send("x=" + dbParam);
+    }
+    callAjax('');
   </script>
 
 
