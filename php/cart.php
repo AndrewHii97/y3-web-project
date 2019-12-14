@@ -1,5 +1,5 @@
 <?php   session_start();
-        //header("Content-Type: application/json; charset=URF-8");
+        header("Content-Type: application/json; charset=URF-8");
         $servername = "localhost";
         $username="root";
         $password="";
@@ -46,11 +46,12 @@
         //         array_push($items,$obj);
         //     }
         // }
-        $items = $result->fetch_all(MYSQLI_ASSOC);print_r($items);
-       print_r(json_encode($items));
-        echo json_decode(json_encode($items));
-        $json = json_encode($items);
-        
-        echo $json; 
+        $items = $result->fetch_all(MYSQLI_ASSOC);
+        // print_r($items);
+    //    print_r(json_encode($items));
+        // echo json_decode(json_encode($items));
+        // $json = json_encode($items);
+        echo json_encode($items);
+        // echo $json; 
 ?>
 

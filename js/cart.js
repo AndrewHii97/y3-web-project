@@ -13,13 +13,12 @@ var xmlhttp = new XMLHttpRequest();
     function to fetch data from php page as json and convert into array of ojbect 
 */
 function requestJson() {
-
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            console.log(this.responseText)
+            // console.log(this.responseText)
             myObj = JSON.parse(this.responseText);
             //insert each item into the html text 
-            console.log(myObj);
+            // console.log(myObj);
             myObj.forEach(insertCartItem);
             addListenerToClass();
             addListenerToClassDel();
@@ -28,7 +27,8 @@ function requestJson() {
 
         }
     };
-    xmlhttp.open("POST", "cart.php", true);
+    
+    xmlhttp.open("POST", "../php/cart.php", true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-unlencoded");
     xmlhttp.send();
 }
