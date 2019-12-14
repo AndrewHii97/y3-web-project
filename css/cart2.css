@@ -122,15 +122,11 @@ td {
 
 }
 
-#SubmitButton {
+#paypal-button {
 	width: 30%;
 	height: 10%;
 	display: block;
 	float: right;
-	text-align: center;
-	background-color: purple;
-	color: white;
-	font-family: Arial;
 	font-size: 20px;
 	margin-top: 2%;
 }
