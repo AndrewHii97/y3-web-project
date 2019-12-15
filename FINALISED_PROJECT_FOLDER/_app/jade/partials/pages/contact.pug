@@ -1,0 +1,50 @@
+.ps-contact
+
+    .ps-section__header
+        .container
+            h1 Contact Us
+            .row
+                +column({cols: [4, 4, 4, 4, 12]})
+                    .ps-block--contact
+                        .ps-block__icon: i.icon-map-pin
+                        .ps-block__content
+                            h4 Store address 1
+                            p No. 120 E 4th Ave, USA
+                            p +1-12345 - 6789
+                            a(href='#') domain@example.com
+                +column({cols: [4, 4, 4, 4, 12]})
+                    .ps-block--contact
+                        .ps-block__icon: i.icon-map-pin
+                        .ps-block__content
+                            h4 Store address 2
+                            p No. 120 E 4th Ave, USA
+                            p +1-12345 - 6789
+                            a(href='#') domain@example.com
+                +column({cols: [4, 4, 4, 4, 12]})
+                    .ps-block--contact
+                        .ps-block__icon: i.icon-map-pin
+                        .ps-block__content
+                            h4 Store address 3
+                            p No. 120 E 4th Ave, USA
+                            p +1-12345 - 6789
+                            a(href='#') domain@example.com
+    .ps-section__content
+        .ps-contact__map
+            #contact-map(data-address="New York, NY" data-title="Funiture!" data-zoom="17")
+        .ps-contact__form
+            form(action="do_action" method="post" class="ps-form--contact")
+                h3 Get In Touch
+                .form-group
+                    label Name
+                    input.form-control(type="text" placeholder="Enter your name...")
+                .form-group
+                    label Email
+                    input.form-control(type="email" placeholder="Enter your email...")
+                .form-group
+                    label Subject
+                    input.form-control(type="text" placeholder="")
+                .form-group
+                    label Message
+                    textarea.form-control(rows=6 placeholder="")
+                .form-group.submit
+                    button.ps-btn.ps-btn--black Send Message

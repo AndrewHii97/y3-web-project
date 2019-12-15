@@ -1,0 +1,41 @@
+mixin lookbook(number, className)
+    .ps-block--lookbook-3(class=className)
+        .container
+            .row
+                +column({cols: [3, 3, 12, 12, 6]})
+                    .ps-product--lookbook.sm
+                        .ps-product__thumbnail: a(href='product-detail.html'): img(src="img/lookbook/lookbook-2/"+number+"/sm-1.jpg" alt="")
+                        .ps-product__content
+                            small Women
+                            a(href='#') Denim vintage skirt
+                            p $84.99
+                    .ps-product--lookbook.sm
+                        .ps-product__thumbnail: a(href='product-detail.html'): img(src="img/lookbook/lookbook-2/"+number+"/sm-3.jpg" alt="")
+                        .ps-product__content
+                            small Women
+                            a(href='#') Denim vintage skirt
+                            p $84.99
+                +column({cols: [6, 6, 12, 12, 12]})
+                    .ps-product--lookbook.main
+                        .ps-product__thumbnail: a(href='product-detail.html'): img(src="img/lookbook/lookbook-2/"+number+"/large.jpg" alt="")
+                        .ps-product__content
+                            h2 Lookbook - #{number}
+                            a(href='cart.html') Shop This look
+                +column({cols: [3, 3, 12, 12, 6]})
+                    .ps-product--lookbook.sm
+                        .ps-product__thumbnail: a(href='product-detail.html'): img(src="img/lookbook/lookbook-2/"+number+"/sm-2.jpg" alt="")
+                        .ps-product__content
+                            small Women
+                            a(href='#') Denim vintage skirt
+                            p $84.99
+                    .ps-product--lookbook.sm
+                        .ps-product__thumbnail: a(href='product-detail.html'): img(src="img/lookbook/lookbook-2/"+number+"/sm-4.jpg" alt="")
+                        .ps-product__content
+                            small Women
+                            a(href='#') Denim vintage skirt
+                            p $84.99
+.ps-lookbook.ps-lookbook--2
+    +lookbook(1, '')
+    +lookbook(2, 'gray')
+    +lookbook(3, '')
+    +lookbook(4, 'gray')

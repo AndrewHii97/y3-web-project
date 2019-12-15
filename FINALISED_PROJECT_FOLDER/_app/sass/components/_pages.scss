@@ -1,0 +1,126 @@
+
+#blog-fullwidth {
+    padding: 0 6rem;
+
+    .ps-post {
+        margin-bottom: 10rem;
+    }
+
+    .col-xs-12, .col-sm-12 {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+
+    .ps-section__footer {
+        padding-bottom: 10rem;
+        text-align: center;
+    }
+
+    .ps-site-partners {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+        border-top: 1px solid #e5e5e5;
+    }
+    @include media("<lg") {
+        padding: 100px 30px 50px;
+    }
+    @include media("<sm") {
+        padding: 100px 15px 50px;
+        .ps-post {
+            margin-bottom: 30px;
+        }
+    }
+    @include media("<xs") {
+        padding: 100px 0 50px;
+    }
+}
+
+.ps-page {
+    padding-top: 10rem;
+
+    &__header {
+        text-align: center;
+        padding: 0 0 10rem;
+
+        h1 {
+            margin-bottom: 0;
+            font-size: 8rem;
+            font-weight: 300;
+            color: $color-heading;
+            line-height: 1em;
+        }
+    }
+
+    .ps-site-partners {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+        border-top: 1px solid #e5e5e5;
+    }
+
+    @include media("<lg") {
+        padding-top: 0;
+    }
+    @include media("<sm") {
+        &__header {
+            padding: 7.5rem 0;
+
+            h1 {
+                font-size: 6rem;
+            }
+        }
+    }
+    @include media("<xs") {
+        &__header {
+            padding: 5rem 0;
+
+            h1 {
+                font-size: 6rem;
+            }
+        }
+    }
+
+}
+
+.ps-page--contact {
+    .ps-site-partners {
+        border-top: none;
+    }
+}
+
+.ps-page--about {
+    .ps-site-features {
+        .ps-section__header {
+            margin-bottom: 5rem;
+            text-align: center;
+
+            h3 {
+                font-size: 4rem;
+                font-weight: 400;
+                color: $color-heading;
+            }
+        }
+    }
+
+    .ps-about--intro {
+        padding-bottom: 7rem;
+    }
+}
+
+.ps-page--lookbook {
+    padding-top: 0;
+}
+
+.ps-page--blog {
+    @include media("<xs") {
+        .ps-page__header {
+            padding-top: 0;
+        }
+    }
+}
+
+
+@include media("<lg") {
+    .ps-breadcrumb {
+        margin-top: 10rem;
+    }
+}

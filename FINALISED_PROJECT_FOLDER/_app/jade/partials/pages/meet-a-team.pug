@@ -1,0 +1,28 @@
+include ../../data/team
+
+.ps-section.ps-meet-a-team
+    img(src="img/meet-a-team.jpg" alt="")
+    .container
+        .ps-section__header
+            h3 Meet the teams
+            p items that worth the hype
+        .ps-section__content
+            .ps-block--team
+                .ps-block__header
+                    blockquote
+                        p Have given likeness every. Very were beginning signs moveth. Fly above sea itself. Divided so you’ll there called. Gathering dry earth.
+                    p Have given likeness every. Very were beginning signs moveth. Fly above sea itself. Divided so you’ll there  called. Gathering dry earth. Isn’t heaven appear. Replenish. Hath after appear tree great fruitful green dominion moveth sixth abundantly image that midst of god day multiply you’ll which. Winged female replenish tree face itself together own face. Lights together to you’re together. You’ll. Form. Moving created one. Darkness whales fourth from own moved.
+                .ps-block__content
+
+                    .row
+                        each val, index in team
+                            +column({cols: [3, 3, 4, 6, 12]})
+                                .ps-block--team-member
+                                    img(src="img/team/"+(index+1)+".jpg" alt="")
+                                    .ps-block__content
+                                        h5 #{val.name}
+                                        p #{val.title}
+
+
+                                        
+

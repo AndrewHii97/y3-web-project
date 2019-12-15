@@ -1,0 +1,20 @@
+.ps-account
+    .container
+        form(action="do_action" method="post" class="ps-form--account")
+            .ps-form__header
+                h3 Login
+            .ps-form__content
+                .form-group
+                    label Username or email address <sup>*</sup>
+                    input.form-control(type="text" placeholder="")
+                .form-group
+                    label Password
+                    input.form-control(type="text" placeholder="")
+                .form-group.submit
+                    button.ps-btn.ps-btn--outline.ps-btn--black Submit
+                    +checkbox('remember', 'remember', 'Remember', '', '')
+                    p
+                        a(href='forgot-password.html') Lost your password?
+                        br
+                        strong  or
+                            a(href='register.html')  Create your account

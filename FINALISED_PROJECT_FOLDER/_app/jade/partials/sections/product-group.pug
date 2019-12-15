@@ -1,0 +1,69 @@
+.ps-product-group
+    .container
+        .row
+            +column({cols: [4, 4, 6, 12, 12]})
+                .ps-block--product-group
+                    .ps-block__header
+                        h3 Recommended
+                    .ps-block__content
+                        - for (var i = 0; i < 3; i ++)
+                            .ps-product--sm
+                                .ps-product__thumbnail
+                                    a(href='product-detail.html'): img(src="img/products/product-group/" + (i + 1) + ".jpg" alt="")
+                                .ps-product__content
+                                    if i == 0
+                                        a(href='product-listing.html').ps-product__category Men
+                                        a(href='product-detail.html').ps-product__title Ethnic embroidered blouse
+                                        p $38.99
+                                    else if i == 1
+                                        a(href='product-listing.html').ps-product__category Men
+                                        a(href='product-detail.html').ps-product__title Fitilli culotte pantolon
+                                        p <del>$168.00</del>$38.99
+                                    else if i == 2
+                                        a(href='product-listing.html').ps-product__category Men
+                                        a(href='product-detail.html').ps-product__title White sport shoes
+                                        p $38.99
+            +column({cols: [4, 4, 6, 12, 12]})
+                .ps-block--product-group
+                    .ps-block__header
+                        h3 On Sale
+                    .ps-block__content
+                        - for (var i = 0; i < 3; i ++)
+                            .ps-product--sm
+                                .ps-product__thumbnail
+                                    a(href='product-detail.html'): img(src="img/products/product-group/" + (i + 4) + ".jpg" alt="")
+                                .ps-product__content
+                                    if i == 0
+                                        a(href='product-listing.html').ps-product__category Men
+                                        a(href='product-detail.html').ps-product__title Striped T-shirt
+                                        p $38.99
+                                    else if i == 1
+                                        a(href='product-listing.html').ps-product__category Men
+                                        a(href='product-detail.html').ps-product__title Roche Petite Gold White
+                                        p <del>$168.00</del>$38.99
+                                    else if i == 2
+                                        a(href='product-listing.html').ps-product__category Men
+                                        a(href='product-detail.html').ps-product__title Red sport shoes
+                                        p $38.99
+            +column({cols: [4, 4, 6, 12, 12]})
+                .ps-block--product-group
+                    .ps-block__header
+                        h3 Top Rated
+                    .ps-block__content
+                        - for (var i = 0; i < 3; i ++)
+                            .ps-product--sm
+                                .ps-product__thumbnail
+                                    a(href='product-detail.html'): img(src="img/products/product-group/" + (i + 4) + ".jpg" alt="")
+                                .ps-product__content
+                                    if i == 0
+                                        a(href='product-listing.html').ps-product__category Men
+                                        a(href='product-detail.html').ps-product__title Striped T-shirt
+                                        p $38.99
+                                    else if i == 1
+                                        a(href='product-listing.html').ps-product__category Men
+                                        a(href='product-detail.html').ps-product__title Roche Petite Gold White
+                                        p <del>$168.00</del>$38.99
+                                    else if i == 2
+                                        a(href='product-listing.html').ps-product__category Men
+                                        a(href='product-detail.html').ps-product__title Red sport shoes
+                                        p $38.99

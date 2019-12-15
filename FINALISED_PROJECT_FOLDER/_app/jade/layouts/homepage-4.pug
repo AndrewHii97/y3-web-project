@@ -1,0 +1,22 @@
+extends ../master
+
+block page_header
+    - var currentPage = 'homepage'
+    include ../shared/header-2
+
+block page_content
+    #homepage-4
+        include ../partials/home-4/home-banner
+        include ../partials/sections/partners
+        include ../partials/home-4/home-4-features
+        include ../partials/sections/collections
+        include ../partials/sections/new-arrivals
+        - let subscribe = 'gray';
+        include ../partials/sections/subscribe
+        include ../partials/sections/our-blogs
+        include ../partials/sections/site-features
+        include ../partials/sections/instagram
+        include ../shared/footer
+    include ../partials/modules/subscribe-popup
+
+

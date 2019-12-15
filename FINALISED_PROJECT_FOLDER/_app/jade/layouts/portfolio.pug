@@ -1,0 +1,19 @@
+extends ../master
+
+block page_header
+
+    - var currentPage = 'homepage'
+    include ../shared/header-2
+
+block page_content
+    .ps-breadcrumb
+        .container
+            ol.breadcrumb
+                li: a(href="index.html") Home
+                li.active Portfolio
+    .ps-page
+        include ../partials/pages/portfolio
+        include ../partials/sections/partners
+        - let subscribe = "gray";
+        include ../partials/sections/subscribe
+    include ../shared/footer

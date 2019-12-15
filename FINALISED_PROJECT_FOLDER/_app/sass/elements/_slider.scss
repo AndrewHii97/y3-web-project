@@ -1,0 +1,244 @@
+.owl-carousel {
+    position: relative;
+    .owl-item {
+        img {
+            width: auto;
+        }
+    }
+
+}
+
+.ps-carousel--nav {
+    position: relative;
+    z-index: 10;
+    .owl-nav {
+        @include vertical-align();
+        z-index: -1;
+        width: 100%;
+        > * {
+            display: inline-block;
+            position: relative;
+            vertical-align: top;
+            width: 50px;
+            height: 50px;
+            @include border-radius(50%);
+            background-color: transparent;
+            @include transition(all .4s ease);
+            i {
+                @include center;
+                font-size: 3rem;
+                color: #333333;
+            }
+            &:hover {
+                background-color: #f7f7f7;
+            }
+        }
+        .owl-prev {
+            margin-left: -60px;
+            i {
+                padding-right: 5px;
+            }
+        }
+        .owl-next {
+            float: right;
+            margin-right: -60px;
+            i {
+                padding-left: 5px;
+            }
+        }
+    }
+    .owl-dots {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        display: none !important;
+        text-align: center;
+        .owl-dot {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            margin-right: 10px;
+            background-color: rgba(#000, .3);
+            @include border-radius(50%);
+            &:last-child {
+                margin-right: 0;
+            }
+            &.active {
+                background-color: $color-2nd;
+            }
+        }
+    }
+    @include media("<lg") {
+        margin-bottom: 3rem;
+        padding-bottom: 30px;
+        .owl-nav {
+            display: none;
+        }
+        .owl-dots {
+            display: block !important;
+        }
+    }
+}
+
+.ps-carousel--banner-3 {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    .owl-stage-outer, .owl-stage, .owl-item {
+        height: 100%;
+    }
+    .ps-banner--3 {
+        width: 100%;
+        height: 100%;
+    }
+    .owl-nav {
+        @include vertical-align();
+        z-index: 10;
+        width: 100%;
+        > * {
+            display: inline-block;
+            position: relative;
+            vertical-align: top;
+            width: 50px;
+            height: 50px;
+            @include border-radius(50%);
+            background-color: #eeeeee;
+            i {
+                @include center;
+                font-size: 3rem;
+                color: #c1c1c1;
+            }
+            &:hover {
+                background-color: #5e6b9d;
+            }
+        }
+        .owl-prev {
+            margin-left: 20px;
+        }
+        .owl-next {
+            float: right;
+            margin-right: 20px;
+        }
+    }
+    .owl-dots {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        display: none !important;
+        text-align: center;
+        .owl-dot {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            margin-right: 10px;
+            background-color: rgba(#000, .3);
+            @include border-radius(50%);
+            &:last-child {
+                margin-right: 0;
+            }
+            &.active {
+                background-color: $color-2nd;
+            }
+        }
+    }
+}
+
+.ps-carousel--primary {
+    .owl-dots {
+        position: absolute;
+        bottom: 3rem;
+        left: 0;
+        width: 100%;
+        //display: none !important;
+        text-align: center;
+        font-size: 0;
+        .owl-dot {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            vertical-align: top;
+            margin-right: 10px;
+            background-color: rgba(#000, .3);
+            @include border-radius(50%);
+            @include transition(all .4s ease);
+            &:last-child {
+                margin-right: 0;
+            }
+            &.active {
+                background-color: $color-2nd;
+            }
+        }
+    }
+    @include media("<xs") {
+        .owl-dots {
+            bottom: 10px;
+            .owl-dot {
+                margin-right: 10px;
+                width: 10px;
+                height: 10px;
+            }
+        }
+    }
+}
+
+.ps-carousel--dots {
+    .owl-dots {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        text-align: center;
+        width: 100%;
+        padding-bottom: 20px;
+    }
+    .owl-dot {
+        display: inline-block;
+        margin-right: 10px;
+        width: 10px;
+        height: 10px;
+        vertical-align: middle;
+        background-color: #b8b8b8;
+        border: 3px solid transparent;
+        @include border-radius(50%);
+        &.active {
+            background-color: #fff;
+            border-color: $color-heading;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.ps-carousel--home5 {
+    @extend %list-reset;
+    .slick-dots {
+        display: inline-block;
+        right: 20px;
+        text-align: center;
+        @include vertical-align();
+        li {
+            margin-bottom: 15px;
+            text-align: center;
+            button {
+                display: inline-block;
+                padding: 0;
+                font-size: 0;
+                width: 6px;
+                height: 6px;
+                line-height: 0;
+                border: none;
+                background-color: $color-heading;
+                @include border-radius(50%);
+            }
+            &.slick-active {
+                button {
+                    width: 12px;
+                    height: 12px;
+                    background-color: $color-1st;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,191 @@
+.ps-filter {
+    margin-bottom: 50px;
+    @extend %list-reset;
+    &__header {
+        @include clearfix();
+        .form-group {
+            display: inline-block;
+            margin-right: 8rem;
+            margin-bottom: 0;
+            label {
+                margin-right: 3rem;
+                margin-bottom: 0;
+                vertical-align: middle;
+            }
+            .ps-select {
+                min-width: 150px;
+                vertical-align: middle;
+                .selectize-input {
+                    position: relative;
+                    vertical-align: top;
+                    padding: 10px 15px;
+                    border: none;
+                    outline: none;
+                    box-shadow: none;
+                }
+                .selectize-dropdown {
+                    cursor: pointer;
+                }
+            }
+        }
+        figure {
+            float: right;
+            .ps-pagination {
+                display: inline-block;
+                p {
+                    display: inline-block;
+                    margin-bottom: 0;
+                    vertical-align: middle;
+                    margin-right: 30px;
+                }
+                .pagination {
+                    vertical-align: middle;
+                    li {
+                        a {
+                            width: 40px;
+                            line-height: 40px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__trigger {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        > p {
+            display: inline-block;
+            margin-bottom: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+            line-height: 40px;
+            color: $color-heading;
+        }
+        i {
+            margin-left: 10px;
+            color: #999999;
+        }
+    }
+    &__icon {
+        display: inline-block;
+        position: relative;
+        width: 40px;
+        height: 40px;
+        vertical-align: top;
+        span,
+        &:before,
+        &:after {
+            position: absolute;
+            right: 10px;
+            height: 2px;
+            width: 20px;
+            background-color: #303030;
+            z-index: 100;
+            @include transition(all 0.4s ease);
+        }
+        span {
+            top: 50%;
+            @include transform(translateY(-50%));
+        }
+        &:before,
+        &:after {
+            content: '';
+        }
+        &:before {
+            top: 12px;
+        }
+        &:after {
+            bottom: 12px;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+        &.active {
+            span {
+                @include transform(translateX(100%));
+                visibility: hidden;
+                opacity: 0;
+            }
+            &:before,
+            &:after {
+                top: 50%;
+                bottom: auto;
+                width: 20px;
+                @include transform-origin(50% 50%);
+                background-color: #fc354c;;
+            }
+            &:before {
+                @include transform(rotate(45deg));
+            }
+            &:after {
+                @include transform(rotate(-45deg));
+            }
+        }
+    }
+    &__result {
+        text-align: right;
+        p {
+            margin-bottom: 0;
+            line-height: 40px;
+        }
+    }
+    &__content {
+        display: none;
+        padding: 30px 50px;
+        background-color: #f7f7f7;
+        @include clearfix;
+
+    }
+    &__column {
+        float: left;
+        width: 25%;
+        padding: 0 15px;
+        > h3 {
+            position: relative;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            font-size: 1.8rem;
+            color: #333;
+            font-weight: 600;
+            letter-spacing: .05em;
+            text-transform: none;
+            &:before {
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100px;
+                height: 1px;
+                background-color: #c3c3c3;
+            }
+        }
+    }
+    &.active {
+        .ps-filter__content {
+            display: block;
+        }
+    }
+    @include media("<lg") {
+        &__content {
+            padding: 30px 15px;
+        }
+    }
+    @include media("<md") {
+        &__column {
+            width: 50%;
+            max-width: 300px;
+        }
+    }
+    @include media("<sm") {
+        &__result {
+            text-align: left;
+        }
+    }
+    @include media("<xs") {
+        &__column {
+            width: 100%;
+            max-width: 300px;
+        }
+    }
+}

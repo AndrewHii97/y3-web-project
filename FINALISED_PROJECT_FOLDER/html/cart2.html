@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CartPageTest</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>cart</title>
+    <link rel="stylesheet" type="text/css" id="applicationStylesheet" href="../css/cart2.css" />
+    <script src="../js/cart.js"></script>
+</head>
+<body>
+    <!-- Start of BannerBox -->
+    <section id="BannerBox">
+        <img id="logo" src="../src/logo.png" alt="logoo.png">
+       
+    </section>
+    <!-- End of BannerBox -->
+    <section id="OuterCart">
+        <div id="InnerCart">
+            <!-- back to category or search page require hyperlink added -->
+            <!-- <div id=TextContainer><a id="BackText" href="../html/cart2.html">Continue Shopping</a></div> -->
+            <!-- form for user to manipulate detail-->
+            <form action="../php/submit.php" method="POST">
+                <!-- start of cart table-->
+                <table id=CartTable>
+                    <thead>
+                        <tr>
+                            <th>Book Name</th>
+                            <th>Detail</th>
+                            <th>Date</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <!-- insert all books item here  -->
+                    <tbody id="CartBody">
+                    </tbody>
+                </table>
+                <!-- end of table -->
+                <!--table for total amound -->
+                <table id="totalTable">
+                    <thead>
+                        <tr>
+                            <th>Total</th>
+                            <th>AmountHere</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th></th>
+                            <th id="amount"></th>
+                        </tr>
+                    </tbody>
+                </table>
+                <div id="paypal-button"></div>
+                <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+                <script>
+                    var globalTotal;
+                    paypal.Button.render({
+                        // Configure environment
+                        env: 'sandbox',
+                        client: {
+                            sandbox: 'AbVmwoFG00J2ivBqjJWqNuQwwVcmzrNPXs57iYhIoXLdqMInHSZT-tEiF4pdV5DJg6TLgabDKMJub34K',
+                            production: 'demo_production_client_id'
+                        },
+                        // Customize button (optional)
+                        locale: 'en_US',
+                        
+                        style: {
+                        size: 'small',
+                        color: 'gold',
+                        shape: 'pill',
+                        },
+
+                        // Enable Pay Now checkout flow (optional)
+                        commit: true,
+
+
+                        // Set up a payment
+                        payment: function(data, actions) {
+                            return actions.payment.create({
+                                transactions: [{
+                                amount: {
+                                    total: globalTotal.toString(),
+                                    currency: 'MYR'
+                                }
+                                }]
+                            });
+                        },
+                        
+                        // Execute the payment
+                        onAuthorize: function(data, actions) {
+                            return actions.payment.execute().then(function() {
+                                var status = new Array();
+                                var item = new Array();
+                                var info = new Array();
+                                status = document.getElementsByClassName("buysell");
+                                item = document.getElementsByClassName("bid");
+                                console.log(status[0].value);
+                                console.log(item[0].value);
+                                info.push(globalTotal);
+                                for(var i=0; i<status.length; i++){
+                                    var obj = {state:status[i].value, bookid:item[i].value};
+                                    info.push(obj);
+                                }
+                                console.log(info.length);
+                                var dbParam = JSON.stringify(info);
+                                xmlhttp = new XMLHttpRequest();
+                                xmlhttp.open("GET", "../php/addTransaction.php?x=" + dbParam, true);
+                                xmlhttp.send();
+                                // Show a confirmation message to the buyer
+                                window.alert('Thank you for your purchase!');
+                                location.reload();
+                            });
+                        }
+                    }, '#paypal-button');
+
+                </script>
+            </form>
+
+        </div>
+    </section>
+    <p id="demo"></p>
+    <script>
+        requestJson();
+        
+    </script>
+</body>
+
+</html>
+
+<!-- 
+    regarding submit multiple data of same name 
+    https://www.php.net/manual/en/reserved.variables.post.php
+    https://stackoverflow.com/questions/7880619/multiple-inputs-with-same-name-through-post-in-php
+    https://stackoverflow.com/questions/2203430/posting-form-fields-with-same-name-attribute
+
+    or simply just pack into json before sending then switch to another page 
+    window.location.href = "URL";
+
+
+-->

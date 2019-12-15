@@ -1,0 +1,27 @@
+extends ../master
+
+block page_header
+    - var currentPage = 'homepage'
+    include ../shared/header-5
+
+block page_content
+    #homepage-6
+        include ../partials/home-6/home-banner
+        include ../partials/sections/partners
+        - let collections = 'homepage-6-2';
+        include ../partials/sections/collections
+        include ../partials/sections/new-arrivals
+        - let categories = 'homepage-6'
+        include ../partials/sections/product-categories
+        include ../partials/sections/product-group
+        include ../partials/sections/testimonial
+        include ../partials/sections/site-features
+        - collections = 'homepage-6';
+        include ../partials/sections/collections
+        - let subscribe = 'white';
+        include ../partials/sections/subscribe
+    include ../shared/footer
+    include ../partials/modules/subscribe-popup
+
+
+

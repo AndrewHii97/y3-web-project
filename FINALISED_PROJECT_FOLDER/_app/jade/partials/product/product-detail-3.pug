@@ -1,0 +1,64 @@
+.container
+    .ps-product--detail(data-type="default")
+        .row
+            +column({cols: [7, 6, 12, 12]})
+                include modules/product-detail-thumbnail-3
+            +column({cols: [5, 6, 12, 12]})
+                include modules/product-detail-info
+        .ps-product__content.ps-tab-root
+            ul(class="ps-tab-list" role="tablist")
+                li.active: a(href="#tab-1") Overview
+                li: a(href="#tab-2") Reviews
+                li: a(href='#tab-3') Tags
+        .ps-tabs
+            .ps-tab.active(role='tabpanel')#tab-1
+                p Caramels tootsie roll carrot cake sugar plum. Sweet roll jelly bear claw liquorice. Gingerbread lollipop dragée cake. Pie topping jelly-o. Fruitcake dragée candy canes tootsie roll. Pastry jelly-o cupcake. Bonbon brownie soufflé muffin.
+                p Sweet roll soufflé oat cake apple pie croissant. Pie gummi bears jujubes cake lemon drops gummi bears croissant macaroon pie. Fruitcake tootsie roll chocolate cake Carrot cake cake bear claw jujubes topping cake apple pie. Jujubes gummi bears soufflé candy canes topping gummi bears cake soufflé cake. Cotton candy soufflé sugar plum pastry sweet roll..
+            .ps-tab#tab-2
+                .ps-block--comment.ps-block--comment-review
+                    .ps-block__thumbnail
+                        img(src="img/user/3.jpg" alt="")
+                    .ps-block__content
+                        h5 Martin Bailey
+                        +rating
+                        p Aenean sit amet odio est. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris quis est lobortis odio dignissim rutrum. Pellentesque blandit lacinia diam, a tincidunt felis tempus eget.
+                .ps-block--comment.ps-block--comment-review
+                    .ps-block__thumbnail
+                        img(src="img/user/1.jpg" alt="")
+                    .ps-block__content
+                        h5 San Baleik
+                        +rating
+                        p Aenean sit amet odio est. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris quis est lobortis odio dignissim rutrum. Pellentesque blandit lacinia diam, a tincidunt felis tempus eget.
+                form(action="do_action" method="post").ps-form--product-review
+                    h4 ADD YOUR REVIEW
+
+                    .form-group
+                        label Name:
+                            sup *
+                        input.form-control(type="text" placeholder="")
+                    .form-group
+                        label Email:
+                            sup *
+                        input.form-control(type="email" placeholder="")
+                    .form-group
+                        label Your rating
+                        select.ps-rating
+                            option(value='1') 1
+                            option(value='1') 2
+                            option(value='1') 3
+                            option(value='1') 4
+                            option(value='5') 5
+                    .form-group
+                        label Your Review:
+                        textarea.form-control(rows="6")
+                    .form-group
+                        button.ps-btn.ps-btn--yellow Submit Reviews
+            .ps-tab#tab-3
+                p Add your tag <span> *</span>
+                form(action="_action" method="post").ps-form--create-tags
+                    .form-group
+                        input.form-control(type="text" placeholder="Type your tags...")
+                        button.ps-btn Add your tags
+                p Use spaces to separate tags. Use single quotes ( * ) for phrases.
+    include modules/related-product
+

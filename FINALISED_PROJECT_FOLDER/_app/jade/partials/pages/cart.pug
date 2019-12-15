@@ -1,0 +1,65 @@
+.ps-shopping-cart
+    .container
+        .row
+            +column({cols: [8, 8, 12, 12, 12]})
+                .ps-block--shopping-cart
+                    .ps-block__header
+                        h3 Shopping Cart
+                    .ps-block__content
+                        .ps-block--cart-item
+                            .ps-block__thumbnail: a(href='#'): img(src="img/products/arrival-1.jpg" alt="")
+                            .ps-block__content
+                                a(href='#').ps-btn--close.ps-btn--no-boder
+                                a(href='#').ps-block__title Front knotted crepe body
+                                .ps-block__desc
+                                    p Size: S
+                                    p Color: Navy
+                                .ps-block__action
+                                    .input-group
+                                        .input-group-prepend: button.btn.btn-default -
+                                        input.form-control(type="text" placeholder="" value=1)
+                                        .input-group-append: button.btn.btn-default +
+                                    p $178.99
+                        .ps-block--cart-item
+                            .ps-block__thumbnail: a(href='#'): img(src="img/products/arrival-2.jpg" alt="")
+                            .ps-block__content
+                                a(href='#').ps-btn--close.ps-btn--no-boder
+                                a(href='#').ps-block__title Front knotted crepe body
+                                .ps-block__desc
+                                    p Size: S
+                                    p Color: Navy
+                                .ps-block__action
+                                    .input-group
+                                        .input-group-prepend: button.btn.btn-default -
+                                        input.form-control(type="text" placeholder="" value=1)
+                                        .input-group-append: button.btn.btn-default +
+                                    p $178.99
+                    .ps-block__footer
+                        .row
+                            .col-sm-6.col-xs-12: a(href='#').ps-btn.ps-btn--outline.ps-btn--black.ps-btn--fullwidth Continue Shopping
+                            .col-sm-6.col-xs-12: a(href='#').ps-btn.ps-btn--outline.ps-btn--black.ps-btn--fullwidth Update Cart
+            +column({cols: [4, 4, 12, 12, 12]})
+                .ps-block--cart-summary
+                    h3 Summary
+                    form(action="do_action" method="post" class="ps-form--cart-process")
+                        figure
+                            figcaption Enter Coupon
+                            .form-group: input.form-control(type="text" placeholder="Coupon")
+                            .form-group: button.ps-btn Apply Coupon
+                        figure
+                            figcaption Caculate Shipping
+                            .form-group
+                                select.ps-select
+                                    option(value="1") Viet Nam
+                                    option(value="2") USA
+                            .form-group: input.form-control(type="text" placeholder="postcode/ZIP")
+                            .form-group: button.ps-btn Update Total
+                        .ps-block__total
+                            h4 SubTotal <span> $79.00</span>
+                            p Shipping
+                            +radio('shipping-1', 'shipping', "Standard: <span>$10.00</span>", '')
+                            +radio('shipping-1', 'shipping', "Express:  <span>$10.00</span>", '')
+                            h5 Total: <span>$89.00</span>
+                        .submit
+                            button.ps-btn.ps-btn--lg.ps-btn--fullwidth.ps-btn--curve Process To checkout
+

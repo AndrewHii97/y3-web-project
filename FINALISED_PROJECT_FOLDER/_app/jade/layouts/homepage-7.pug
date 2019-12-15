@@ -1,0 +1,20 @@
+extends ../master
+
+block page_header
+    - var currentPage = 'homepage'
+    include ../shared/header-3
+
+block page_content
+    #homepage-7
+        include ../partials/home-7/home-banner
+        include ../partials/sections/new-arrivals-fullwidth
+        include ../partials/sections/our-blogs
+        - collections = 'homepage-6';
+        include ../partials/sections/collections
+        - let subscribe = 'white';
+        include ../partials/sections/subscribe
+    include ../shared/footer
+    include ../partials/modules/subscribe-popup
+
+
+

@@ -1,0 +1,20 @@
+extends ../master
+
+block page_header
+
+    - var currentPage = 'about'
+    include ../shared/header
+
+block page_content
+    .ps-hero--2.bg--top(data-background="img/about-3.jpg")
+        .ps-breadcrumb
+            h1 about us
+            ol.breadcrumb
+                li: a(href="index.html") Home
+                li.active Meet our team
+    .ps-page.ps-page--about
+        include ../partials/pages/about-us
+        include ../partials/sections/partners
+        - let subscribe = "gray";
+        include ../partials/sections/subscribe
+    include ../shared/footer

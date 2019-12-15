@@ -1,0 +1,58 @@
+.ps-filter.active
+    .ps-filter__header
+        .ps-filter__trigger
+            p Filters
+            i.fa.fa-angle-down
+    .ps-filter__content
+        aside.widget.widget_shop
+            h3.widget-title Categories
+            ul.ps-list--checked.ps-list--checked-circle
+                li: a(href='#') All
+                li: a(href='#') Women’s All
+                li: a(href='#') Men’s All
+                li: a(href='#') Shoes
+                li: a(href='#') Accessories
+        aside.widget.widget_filter.widget_shop
+            h3.widget-title Prices
+            .ps-slider(data-default-min='0', data-default-max ='500', data-max='1000' data-step='100', data-unit ='$')
+            p.ps-slider__meta
+                span.ps-slider__value.ps-slider__min
+                | -
+                span.ps-slider__value.ps-slider__max
+        aside.widget.widget_shop.widget_color
+            h3.widget-title Color
+            +checkbox('color-1', 'size', '', 'ps-checkbox--color color-1 ps-checkbox--inline', '')
+            +checkbox('color-2', 'size', '', 'ps-checkbox--color color-2 ps-checkbox--inline', '')
+            +checkbox('color-3', 'size', '', 'ps-checkbox--color color-3 ps-checkbox--inline', '')
+            +checkbox('color-4', 'size', '', 'ps-checkbox--color color-4 ps-checkbox--inline', '')
+            +checkbox('color-5', 'size', '', 'ps-checkbox--color color-5 ps-checkbox--inline', '')
+        aside.widget.widget_shop.widget_size
+            h3.widget-title Size
+            +checkbox('size-1', 'size', 'All', 'ps-checkbox--size ps-checkbox--inline', '')
+            +checkbox('size-2', 'size', 'XSS', 'ps-checkbox--size ps-checkbox--inline', '')
+            +checkbox('size-3', 'size', 'XS', 'ps-checkbox--size ps-checkbox--inline', '')
+            +checkbox('size-4', 'size', 'S', 'ps-checkbox--size ps-checkbox--inline', '')
+            +checkbox('size-5', 'size', 'S', 'ps-checkbox--size ps-checkbox--inline', '')
+            +checkbox('size-5', 'size', 'M', 'ps-checkbox--size ps-checkbox--inline', '')
+            +checkbox('size-5', 'size', 'L', 'ps-checkbox--size ps-checkbox--inline', '')
+            +checkbox('size-5', 'size', 'XL', 'ps-checkbox--size ps-checkbox--inline', '')
+        aside.widget.widget_shop.widget_products
+            h3.widget-title On Sale
+            .ps-product--sidebar
+                .ps-product__thumbnail: a(href='product-detail.html'): img(src="img/products/sidebar-1.jpg" alt="")
+                .ps-product__content
+                    span Men
+                    a(href='product-detail.html') Striped T-shirt
+                    p $38.99
+            .ps-product--sidebar
+                .ps-product__thumbnail: a(href='product-detail.html'): img(src="img/products/sidebar-2.jpg" alt="")
+                .ps-product__content
+                    span Men
+                    a(href='product-detail.html') Roche Petite Gold White
+                    p <del>$168.99</del> – $178.99
+            .ps-product--sidebar
+                .ps-product__thumbnail: a(href='product-detail.html'): img(src="img/products/sidebar-3.jpg" alt="")
+                .ps-product__content
+                    span Men
+                    a(href='product-detail.html') Red sport shoes
+                    p $38.99

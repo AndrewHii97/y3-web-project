@@ -1,0 +1,55 @@
+.ps-filter
+    .ps-filter__header
+        .ps-filter__trigger
+            p Show Filter
+            i.fa.fa-angle-down
+        figure
+            .form-group
+                label Sortby:
+                select.ps-select
+                    option(value='1') Populaly
+                    option(value='2') Price Increase
+                    option(value='3') Price Descrease
+            .ps-pagination
+                p Brower:
+                ul.pagination
+                    li.active: a(href="#") 1
+                    li: a(href="#") 2
+                    li: a(href="#") 3
+    .ps-filter__content
+        .ps-filter__column(data-mh="column")
+            h3 Sort Categories by
+            ul.ps-list--filter
+                li.current: a(href='product-listing.html') All
+                li: a(href='product-listing.html') Body Care
+                li: a(href='product-listing.html') Skin Care
+                li: a(href='product-listing.html') Soap
+                li: a(href='product-listing.html') Bath Body
+                li: a(href='product-listing.html') Therapy
+                li: a(href='product-listing.html') Salt & Milk
+        .ps-filter__column(data-mh="column")
+            h3 Sort Product By
+            ul.ps-list--filter
+                li.current: a(href='product-listing.html') Default Sorting
+                li: a(href='product-listing.html') Sort by popularity
+                li: a(href='product-listing.html') Sort by average rating
+                li: a(href='product-listing.html') Sort by newness
+                li: a(href='product-listing.html') Sort by price: low to high
+                li: a(href='product-listing.html') Sort by price: high to low
+        .ps-filter__column(data-mh="column")
+            h3 Filter by Price
+            ul.ps-list--filter
+                li.current: a(href='product-listing.html') All
+                li: a(href='product-listing.html') £10.00 - £110.00
+                li: a(href='product-listing.html') £110.00 - £210.00
+                li: a(href='product-listing.html') £210.00 - £310.00
+                li: a(href='product-listing.html') £310.00+
+        .ps-filter__column(data-mh="column")
+            h3 Filter by Stock
+            ul.ps-list--filter
+                li.current: a(href='product-listing.html') All
+                li: a(href='product-listing.html') New
+                li: a(href='product-listing.html') SaleOff
+                li: a(href='product-listing.html') Show Only Products On Sale
+                li: a(href='product-listing.html') In Stock Only
+                li: a(href='product-listing.html') Out of stock

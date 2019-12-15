@@ -1,0 +1,19 @@
+#login.ps-modal
+    .ps-modal__container
+        a(href='#').ps-btn--close.ps-btn--no-boder
+        .ps-modal__content
+            form(action="do_action" method="post" class="ps-form--register")
+                h3 Become  a member <br> Please register
+                .form-group
+                    label Username
+                    input.form-control(type="text" placeholder="")
+                .form-group
+                    label Email Address
+                    input.form-control(type="email" placeholder="")
+                .form-group
+                    label Password
+                    input.form-control(type="password" placeholder="")
+                .form-group.submit
+                    button.ps-btn.ps-btn--outline.ps-btn--black.ps-btn--lg Register
+                    p or member to Voguish?
+                        a(href='login.html')  Login Now

@@ -1,0 +1,21 @@
+form(action="do_action" method="post" class="ps-form--comment")
+    h3 Leave a Reply
+    p Your email address will not be published. Required fields are marked *
+    .row
+        +column({cols: [6, 6, 6, 12, 12]})
+            .form-group
+                label Name <sup>*</sup>
+                input.form-control(type="text" placeholder="Enter your name")
+        +column({cols: [6, 6, 6, 12, 12]})
+            .form-group
+                label Email<sup>*</sup>
+                input.form-control(type="email" placeholder="Enter your email")
+
+    .form-group
+        label Website
+        input.form-control(type="text" placeholder="")
+    .form-group
+        label Comment
+        textarea.form-control(rows=8 placeholder="Text here")
+    .form-group.submit
+        button.ps-btn Post Comment

@@ -1,0 +1,13 @@
+extends ../master
+
+block page_header
+    - var currentPage = 'homepage'
+    include ../shared/header-5
+
+block page_content
+    #homepage-5
+        include ../partials/home-5/home-content
+    include ../partials/modules/subscribe-popup
+
+
+

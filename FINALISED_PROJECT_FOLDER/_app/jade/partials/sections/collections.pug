@@ -1,0 +1,17 @@
+if collections === 'homepage-6'
+    .ps-home-collection
+        .row
+            +column({cols: [6, 6, 12, 12]}): a(href='product-listing.html').ps-collection: img(src="img/collection/home-6-2.jpg" alt="")
+            +column({cols: [6, 6, 12, 12]}): a(href='product-listing.html').ps-collection: img(src="img/collection/home-6-1.jpg" alt="")
+else if collections === 'homepage-6-2'
+    .ps-home-collection
+        .row
+            +column({cols: [4, 4, 4, 12]}): a(href='product-listing.html').ps-collection: img(src="img/collection/home-6-3-1.jpg" alt="")
+            +column({cols: [4, 4, 4, 12]}): a(href='product-listing.html').ps-collection: img(src="img/collection/home-6-3-2.jpg" alt="")
+            +column({cols: [4, 4, 4, 12]}): a(href='product-listing.html').ps-collection: img(src="img/collection/home-6-3-3.jpg" alt="")
+else
+    .ps-home-collection
+        .container-fluid
+            .row
+                +column({cols: [6, 6, 12, 12]}): a(href='product-listing.html').ps-collection: img(src="img/collection/home-4-1.jpg" alt="")
+                +column({cols: [6, 6, 12, 12]}): a(href='product-listing.html').ps-collection: img(src="img/collection/home-4-2.jpg" alt="")

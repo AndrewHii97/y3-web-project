@@ -1,0 +1,56 @@
+include ../data/menu
+// header
+header.header.header--4(data-sticky='false')
+    .header__top
+        .container
+            .header__left
+                p Free shipping on all orders over $75
+                select.ps-select
+                    option(value="usd") USD
+                    option(value="sgd") SGD
+                    option(value="AUD") AUD
+                select.ps-select
+                    option(value="eng") English
+                    option(value="Japanese") Japanese
+            .header__right
+                .header__phone
+                    i.icon-phone-call
+                    | + 123-45-6789
+                .header__links
+                    .ps-dropdown
+                        a(href='#') My account
+                        ul.ps-dropdown-menu
+                            li: a(href='#') Login
+                            li: a(href='#') Sign Up
+                            li: a(href='#') My Favorite
+                    a(href='#') My Wishlist
+                    a(href='#') Daily deal
+    nav.navigation
+        .container
+            .row
+                .col-xl-3
+                    a(href='index.html').ps-logo: img(src="img/logo-black.png" alt="")
+                .col-xl-9
+                    .navigation__top
+                        form(action="do_action" method="post" class="ps-form--header-search")
+                            .form-group
+                                input.form-control(type="text" placeholder="Search Here")
+                                button.ps-btn.ps-btn--black Search
+                        .header__actions
+                            a(href='#').header__login
+                                i.icon-user3
+                                strong  Login
+                                |  or Register
+                            include cart
+                    .navigation__bottom
+                        +makeMenu(data_navigation, 'menu')
+header.header--mobile
+    nav.navigation
+        .container
+            .menu-toggle: span
+            a(href='index.html').ps-logo: img(src="img/logo.png" alt="")
+            .header__actions
+                a(href='#').ps-search-btn: i.aroma-magnifying-glass
+                include cart
+nav.navigation--mobile.visible-lg
+    +makeMenu(data_navigation, 'menu')

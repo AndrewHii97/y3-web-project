@@ -1,0 +1,23 @@
+extends ../master
+
+block page_header
+
+    - var currentPage = 'contact'
+    include ../shared/header-2
+
+block page_content
+    .ps-breadcrumb
+        .container
+            ol.breadcrumb
+                li: a(href="index.html") Home
+                li.active Contact Us
+    .ps-page.ps-page--contact
+        include ../partials/pages/contact
+        include ../partials/sections/partners
+        - let subscribe = "gray";
+        include ../partials/sections/subscribe
+    include ../shared/footer
+
+
+
+

@@ -1,0 +1,24 @@
+extends ../master
+
+block page_header
+    - var currentPage = 'homepage'
+    include ../shared/header
+
+block page_content
+    #homepage-1
+        include ../partials/home-1/banner
+        include ../partials/sections/countdown
+        include ../partials/sections/site-features
+        include ../partials/sections/product-categories
+        include ../partials/home-1/collection
+        include ../partials/sections/new-arrivals
+        include ../partials/sections/testimonial
+        include ../partials/sections/subscribe
+        include ../partials/sections/our-blogs
+        include ../partials/sections/instagram
+    include ../shared/footer
+    include ../partials/modules/subscribe-popup
+
+
+
+

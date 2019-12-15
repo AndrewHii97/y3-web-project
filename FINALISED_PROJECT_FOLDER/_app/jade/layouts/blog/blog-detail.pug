@@ -1,0 +1,25 @@
+extends ../../master
+
+block page_header
+
+    - var currentPage = 'blog'
+    include ../../shared/header-2
+
+block page_content
+    .ps-breadcrumb
+        .container
+            ol.breadcrumb
+                li: a(href="index.html") Home
+                li.active Blog Detail
+    .ps-page.ps-page--blog
+        include ../../partials/blog/blog-detail
+        include ../../partials/blog/post-comment
+        include ../../partials/sections/partners
+        - let subscribe = "gray";
+        include ../../partials/sections/subscribe
+
+    include ../../shared/footer
+
+
+
+

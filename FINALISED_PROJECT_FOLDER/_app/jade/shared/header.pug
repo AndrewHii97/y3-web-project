@@ -1,0 +1,25 @@
+include ../data/menu
+// header
+header.header.header--1(data-sticky='true')
+    nav.navigation
+        .container-fluid
+            a(href='index.html').ps-logo: img(src="img/logo.png" alt="")
+            .menu-toggle: span
+            .header__actions
+                a(href='#login').header__login.ps-modal-link
+                    i.icon-user3
+                    strong  Login
+                    |  or Register
+                a(href='#').ps-search-btn: i.icon-search3
+                include cart
+            +makeMenu(data_navigation, 'menu')
+header.header--mobile
+    nav.navigation
+        .container
+            .menu-toggle: span
+            a(href='index.html').ps-logo: img(src="img/logo.png" alt="")
+            .header__actions
+                a(href='#').ps-search-btn: i.aroma-magnifying-glass
+                include cart
+nav.navigation--mobile.visible-lg
+    +makeMenu(data_navigation, 'menu')

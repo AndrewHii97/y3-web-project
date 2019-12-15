@@ -1,0 +1,84 @@
+include ../../data/products
+.ps-shopping
+    include ../modules/product-filter
+    .ps-shopping__content
+        .row
+            each val in arrivals
+                +column({cols: [3, 3, 4, 6, 12]})
+                    .ps-product
+                        .ps-product__thumbnail
+                            if val.sale == true
+                                span.ps-product__badge: i 45% <br> off
+                            a(href='product-detail.html').ps-product__overlay
+                            img(src=val.thumbnail alt="")
+                            ul.ps-product__actions
+                                li: a(href='#'): i.icon-heart-o
+                                li: a(href='#'): i.icon-bar-chart
+                                li: a(href='#'): i.icon-eye3
+                            a(href='cart.html').ps-product__shopping + Quick add
+                        .ps-product__content
+                            .ps-product__meta
+                                a(href='#') #{val.category}
+                                if val.color == true
+                                    .ps-product__color
+                                        a(href='#').ps-color.ps-color--1
+                                        a(href='#').ps-color.ps-color--2
+                                        a(href='#').ps-color.ps-color--3
+                            a(href='product-detail.html').ps-product__title #{val.title}
+                            p.ps-product__price
+                                if val.saleOfPrice != ''
+                                    del #{val.saleOfPrice}
+                                    | -
+                                |  #{val.price}
+                            if val.star == true
+                                +rating
+                            if val.review == true
+                                span.ps-product__rating 4 Review available
+        .row
+            each val in arrivals
+                +column({cols: [3, 3, 4, 6, 12]})
+                    .ps-product
+                        .ps-product__thumbnail
+                            if val.sale == true
+                                span.ps-product__badge: i 45% <br> off
+                            a(href='product-detail.html').ps-product__overlay
+                            img(src=val.thumbnail alt="")
+                            ul.ps-product__actions
+                                li: a(href='#'): i.icon-heart-o
+                                li: a(href='#'): i.icon-bar-chart
+                                li: a(href='#'): i.icon-eye3
+                            a(href='cart.html').ps-product__shopping + Quick add
+                        .ps-product__content
+                            .ps-product__meta
+                                a(href='#') #{val.category}
+                                if val.color == true
+                                    .ps-product__color
+                                        a(href='#').ps-color.ps-color--1
+                                        a(href='#').ps-color.ps-color--2
+                                        a(href='#').ps-color.ps-color--3
+                            a(href='product-detail.html').ps-product__title #{val.title}
+                            p.ps-product__price
+                                if val.saleOfPrice != ''
+                                    del #{val.saleOfPrice}
+                                    | -
+                                |  #{val.price}
+                            if val.star == true
+                                +rating
+                            if val.review == true
+                                span.ps-product__rating 4 Review available
+    .ps-shopping__footer.text-center
+        a(href='#').ps-btn.ps-btn--outline.ps-btn--black Load More
+
+
+
+
+
+
+
+
+
+
+
+
+
+

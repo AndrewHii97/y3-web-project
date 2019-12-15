@@ -1,0 +1,88 @@
+include ../../data/products
+.ps-section.ps-new-arrivals
+    .container
+        .ps-section__header
+            h3 New Arrivals
+            p items that worth the hype
+        .ps-section__content
+            .ps-carousel--nav.owl-slider(
+            data-owl-auto= 'off',
+            data-owl-loop= 'off',
+            data-owl-speed= '10000',
+            data-owl-gap= '0',
+            data-owl-nav= 'true',
+            data-owl-dots= 'true',
+            data-owl-item= '1',
+            data-owl-item-xs= '1',
+            data-owl-item-sm= '1',
+            data-owl-item-md= '1',
+            data-owl-item-lg= '1',
+            data-owl-duration= '1000',
+            data-owl-mousedrag= 'off'
+            )
+                - for (var i = 0; i < 2; i ++)
+                    .row
+                        each val in arrivals
+                            +column({cols: [3, 3, 4, 6, 12]})
+                                .ps-product
+                                    .ps-product__thumbnail
+                                        if val.sale == true
+                                            span.ps-product__badge: i 45% <br> off
+                                        a(href='product-detail.html').ps-product__overlay
+                                        img(src=val.thumbnail alt="")
+                                        ul.ps-product__actions
+                                            li: a(href='#'): i.icon-heart-o
+                                            li: a(href='#'): i.icon-bar-chart
+                                            li: a(href='#'): i.icon-eye3
+                                        a(href='cart.html').ps-product__shopping + Quick add
+                                    .ps-product__content
+                                        .ps-product__meta
+                                            a(href='#') #{val.category}
+                                            if val.color == true
+                                                .ps-product__color
+                                                    a(href='#').ps-color.ps-color--1
+                                                    a(href='#').ps-color.ps-color--2
+                                                    a(href='#').ps-color.ps-color--3
+                                        a(href='product-detail.html').ps-product__title #{val.title}
+                                        p.ps-product__price
+                                            if val.saleOfPrice != ''
+                                                del #{val.saleOfPrice}
+                                                | -
+                                            |  #{val.price}
+                                        if val.star == true
+                                            +rating
+                                        if val.review == true
+                                            span.ps-product__rating 4 Review available
+        .ps-section__mobile
+            .row
+                each val in arrivals
+                    +column({cols: [3, 3, 4, 6, 12]})
+                        .ps-product
+                            .ps-product__thumbnail
+                                if val.sale == true
+                                    span.ps-product__badge: i 45% <br> off
+                                a(href='product-detail.html').ps-product__overlay
+                                img(src=val.thumbnail alt="")
+                                ul.ps-product__actions
+                                    li: a(href='#'): i.icon-heart-o
+                                    li: a(href='#'): i.icon-bar-chart
+                                    li: a(href='#'): i.icon-eye3
+                                a(href='cart.html').ps-product__shopping + Quick add
+                            .ps-product__content
+                                .ps-product__meta
+                                    a(href='#') #{val.category}
+                                    if val.color == true
+                                        .ps-product__color
+                                            a(href='#').ps-color.ps-color--1
+                                            a(href='#').ps-color.ps-color--2
+                                            a(href='#').ps-color.ps-color--3
+                                a(href='product-detail.html').ps-product__title #{val.title}
+                                p.ps-product__price
+                                    if val.saleOfPrice != ''
+                                        del #{val.saleOfPrice}
+                                        | -
+                                    |  #{val.price}
+                                if val.star == true
+                                    +rating
+                                if val.review == true
+                                    span.ps-product__rating 4 Review available

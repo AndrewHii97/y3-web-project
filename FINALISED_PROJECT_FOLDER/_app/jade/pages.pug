@@ -1,0 +1,43 @@
+extends master
+
+
+block page_header
+
+    include utils/mixins
+
+block page_content
+    -
+        pages = [
+            'index',
+            'product-fullwidth',
+            'product-fullwidth-5-columns',
+            'product-fullwidth-6-columns',
+            'product-left-sidebar',
+            'product-sidebar-3-columns',
+            'product-sidebar-4-columns',
+            'categories-list',
+            'product-detail',
+            'product-detail-2',
+            'product-detail-3',
+            'blog-fullwidth',
+            'blog-left-sidebar',
+            'blog-detail',
+            'blog-detail-modern',
+            'cart',
+            'lookbook-1',
+            'portfolio',
+            'portfolio-2',
+            'about-us',
+            'contact-us',
+            'meet-the-team',
+            'login',
+            'register',
+        ]
+    .section.ps-section.pt-50
+        .container
+            .jumbotron
+                .text-center: img(src="img/logo.png" alt="")
+                ol(style="padding: 0; margin: 0; padding-left: 20px;")
+                        each val in pages
+                            li(style="line-heigh: 30px;"): a(href=val+".html" target="_blank") #{val}
+

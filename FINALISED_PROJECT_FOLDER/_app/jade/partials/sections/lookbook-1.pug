@@ -1,0 +1,22 @@
+mixin lookbook(img)
+    .ps-block--lookbook-2
+        .ps-block__thumbnail
+            img(src=img alt="")
+            ul.ps-block__list
+                li: a(href='product-detail.html'): img(src="img/products/lookbook-sm-1.jpg" alt="")
+                li: a(href='product-detail.html'): img(src="img/products/lookbook-sm-2.jpg" alt="")
+                li: a(href='product-detail.html'): img(src="img/products/lookbook-sm-3.jpg" alt="")
+                li: a(href='product-detail.html'): img(src="img/products/lookbook-sm-4.jpg" alt="")
+        .ps-block__content
+            a(href='cart.html') Shop this lookbook
+.ps-lookbook.ps-lookbook-1
+    .container
+        .masonry-wrapper(data-col-lg="2" data-col-md="3" data-col-sm="2" data-col-xs='1' data-gap="30" data-radio="100%")
+            .ps-masonry
+                .grid-sizer
+                .grid-item.fashion: .grid-item__content-wrapper: +lookbook("img/products/lookbook-1.jpg")
+                .grid-item.fashion: .grid-item__content-wrapper: +lookbook("img/products/lookbook-2.jpg")
+                .grid-item.fashion: .grid-item__content-wrapper: +lookbook("img/products/lookbook-3.jpg")
+                .grid-item.fashion: .grid-item__content-wrapper: +lookbook("img/products/lookbook-4.jpg")
+                .grid-item.fashion: .grid-item__content-wrapper: +lookbook("img/products/lookbook-5.jpg")
+                .grid-item.fashion: .grid-item__content-wrapper: +lookbook("img/products/lookbook-6.jpg")

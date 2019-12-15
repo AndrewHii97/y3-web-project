@@ -1,0 +1,493 @@
+.ps-form--subscribe {
+    max-width: 77rem;
+    margin: 0 auto;
+
+    p {
+        margin-bottom: 3rem;
+        color: #ffffff;
+        font-size: 2.4rem;
+        font-style: italic;
+        strong {
+            font-style: normal;
+            font-size: 3.4rem;
+            font-weight: 600;
+        }
+    }
+    .form-group {
+        max-width: 630px;
+        margin: 0 auto;
+        @include display(flex);
+        @include flex-flow(row nowrap);
+        @include align-items(center);
+        > * {
+            width: 100%;
+        }
+        .form-group__content {
+            position: relative;
+            border-bottom: 1px solid #fff;
+            padding: 1rem 0;
+            padding-left: 4rem;
+            input {
+                background-color: transparent;
+                height: 40px;
+                border: none;
+                color: #ffffff;
+                font-size: 1.4rem;
+                @include placeholder() {
+                    color: #ffffff;
+                }
+            }
+            i {
+                @include vertical-align();
+                left: 0;
+                color: #ffffff;
+                font-size: 3rem;
+            }
+        }
+        .form-group__submit {
+            max-width: 140px;
+            button {
+                width: 100%;
+            }
+        }
+    }
+    @include media("<xs") {
+        text-align: center;
+        .form-group {
+            @include flex-flow(row wrap);
+            .form-group__content {
+                margin-bottom: 2rem;
+            }
+            .form-group__submit {
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+.ps-form--widget-search {
+    position: relative;
+    .form-control {
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid #e5e5e5;
+    }
+    button {
+        @include vertical-align();
+        right: 0;
+        width: 40px;
+        height: 40px;
+        background-color: #f5f5f5;
+        padding: 0;
+        i {
+            @include center();
+            color: $color-heading;
+        }
+        &:hover {
+            background-color: $color-1st;
+            i {
+                color: #ffffff;
+            }
+        }
+    }
+}
+
+.ps-form--comment {
+    h3 {
+        margin-bottom: 2rem;
+        font-weight: 400;
+        color: $color-heading;
+        font-size: 2.4rem;
+    }
+    p {
+        margin-bottom: 3.5rem;
+        color: $color-text;
+    }
+    .form-group {
+        > label {
+            sup {
+                color: $color-1st;
+            }
+        }
+        .form-control {
+            border: 1px solid #dad9d9;
+            background-color: #fff;
+            border: 50%;
+            @include border-radius(50px);
+        }
+        textarea.form-control {
+            @include border-radius(0);
+        }
+    }
+    .submit {
+        button {
+            padding-left: 6rem;
+            padding-right: 6rem;
+            &:hover {
+                background-color: #222;
+            }
+        }
+    }
+}
+
+.ps-form--contact {
+    h3 {
+        margin-bottom: 2.5rem;
+        font-weight: 400;
+        color: $color-heading;
+        font-size: 2.4rem;
+    }
+    p {
+        margin-bottom: 3.5rem;
+        color: $color-text;
+    }
+    .form-group {
+        > label {
+            sup {
+                color: $color-1st;
+            }
+        }
+        .form-control {
+            border: 1px solid #dad9d9;
+            background-color: #fff;
+            border: 50%;
+            @include border-radius(50px);
+            &:focus {
+                border-color: $color-1st;
+            }
+        }
+        textarea.form-control {
+            @include border-radius(0);
+        }
+    }
+    .submit {
+        button {
+            padding-left: 6rem;
+            padding-right: 6rem;
+            &:hover {
+                background-color: #222;
+            }
+        }
+    }
+}
+
+.ps-form--product-review {
+    max-width: 450px;
+    h4 {
+        margin-bottom: 1.5rem;
+        font-weight: 500;
+    }
+    .form-group {
+        margin-bottom: 3rem;
+        > label {
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            sup {
+                color: #f00;
+            }
+        }
+    }
+    .form-control {
+        border: none;
+        background-color: #eee;
+        @include border-radius(4px);
+    }
+    button {
+        border: none;
+        height: 45px;
+        @include border-radius(50px);
+    }
+}
+
+.ps-form--create-tags {
+    position: relative;
+    label {
+        color: #000;
+    }
+    input {
+        display: inline-block;
+        margin-right: 1rem;
+        margin-bottom: 20px;
+        width: 100%;
+        max-width: 300px;
+        height: 50px;
+        border: none;
+        text-indent: 10px;
+        background-color: #eee;
+        @include border-radius(4px);
+        @include placeholder() {
+            color: #757575;
+        }
+        &:focus {
+            background-color: #eee;
+        }
+    }
+    button {
+        display: inline-block;
+        vertical-align: top;
+        padding-left: 40px;
+        padding-right: 40px;
+        height: 50px;
+        @include border-radius(4px);
+    }
+    @include media("<sm") {
+        max-width: 400px;
+        margin: 0 auto 3rem;
+        input {
+            max-width: 400px;
+        }
+        button {
+            width: 100%;
+            text-align: center;
+        }
+    }
+}
+
+.ps-form--cart-process {
+    .form-group {
+        margin-bottom: 10px;
+    }
+    .ps-select {
+        width: 100%;
+        .selectize-input {
+            @include border-radius(40px);
+            padding-left: 20px;
+        }
+    }
+    .form-control {
+        background-color: transparent;
+        border: 1px solid #e6e5e5;
+        height: 38px;
+        @include border-radius(40px);
+    }
+    figure {
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        border: none;
+        border-bottom: 1px solid #e5e5e5;
+        button {
+            background-color: #555;
+        }
+    }
+    .submit {
+        button {
+            @include border-radius(50px);
+        }
+    }
+}
+
+.ps-form--header-search {
+    position: relative;
+    &:before {
+        content: "\f002";
+        font-family: FontAwesome;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        color: $color-text;
+    }
+    .form-group {
+        margin-bottom: 0;
+        position: relative;
+        vertical-align: top;
+        .form-control {
+            border: none;
+            height: 40px;
+            border-bottom: 1px solid #e5e5e5;
+            background-color: transparent;
+            text-indent: 20px;
+        }
+        button {
+            @include vertical-align();
+            left: 100%;
+        }
+    }
+}
+
+.ps-form--register {
+    padding-top: 3rem;
+    text-align: center;
+    h3 {
+        margin-bottom: 3rem;
+        font-size: 2.4rem;
+        font-weight: 400;
+        color: $color-heading;
+    }
+    .form-group {
+        text-align: left;
+        max-width: 430px;
+        margin: 0 auto 20px;
+        > label {
+            color: $color-text;
+            margin-bottom: 10px;
+        }
+        .form-control {
+            height: 37px;
+            color: $color-text;
+            background-color: transparent;
+            border-color: #e5e5e5;
+            @include border-radius(50px);
+        }
+    }
+    .submit {
+        text-align: center;
+        .ps-btn {
+            margin-bottom: 2rem;
+            max-width: 300px;
+            width: 100%;
+            @include border-radius(60px);
+        }
+        .facebook {
+            background-color: #3b5998;
+        }
+    }
+}
+
+.ps-form--subscribe-popup {
+    max-width: 460px;
+    margin: 7rem auto  5rem;
+    text-align: center;
+    padding: 6rem 3rem;
+    background-color: #ffffff;
+    h3 {
+        margin-bottom: 10px;
+        font-size: 3.5rem;
+        font-weight: 500;
+        color: $color-heading;
+    }
+    h1 {
+        margin-bottom: 0;
+        font-weight: 600;
+        font-size: 8rem;
+        color: $color-heading;
+        text-transform: uppercase;
+    }
+    figure {
+        padding: 3rem 0;
+        h4 {
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: $color-heading;
+            text-transform: uppercase;
+        }
+        p {
+            font-size: 1.3rem;
+            color: $color-text;
+        }
+    }
+    .form-group {
+        max-width: 330px;
+        margin: 0 auto;
+    }
+    .form-control {
+        margin-bottom: 10px;
+        background-color: transparent;
+        border-color: #e5e5e5;
+        @include border-radius(50px);
+
+    }
+    button {
+        width: 100%;
+        height: 52px;
+        background-color: $color-heading;
+        @include border-radius(50px);
+    }
+}
+
+.ps-form--primary-search {
+    position: relative;
+    max-width: 650px;
+    margin: 0 auto;
+    input {
+        border: none;
+        font-size: 3.6rem;
+        color: #ffffff;
+        padding-left: 0;
+        height: 80px;
+        border-bottom: 2px solid #fff;
+        background-color: transparent;
+        @include placeholder() {
+            opacity: 1;
+            color: #cacaca;
+        }
+        &:focus {
+            color: #ffffff;
+            background-color: transparent;
+        }
+    }
+    button {
+        @include vertical-align();
+        right: 0;
+        font-size: 2rem;
+        color: #ffffff;
+        background-color: transparent;
+        border: none;
+    }
+    @include media("<xs") {
+        input {
+            height: 60px;
+            font-size: 2rem;
+        }
+    }
+
+}
+
+.ps-form--account {
+    border: solid 1px #e5e5e5;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    padding: 5rem 3rem;
+    .ps-form__header {
+        padding-bottom: 3rem;
+        text-align: center;
+        h3 {
+            font-weight: 300;
+            color: $color-heading;
+        }
+    }
+    .form-group {
+        max-width: 420px;
+        margin: 0 auto 20px;
+        > label {
+            color: #555555;
+            font-size: 13px;
+        }
+    }
+    .form-control {
+        border: 1px solid #e5e5e5;
+        background-color: transparent;
+        @include border-radius(50px);
+    }
+    .submit {
+        text-align: center;
+        .ps-btn {
+            margin-bottom: 20px;
+            height: 45px;
+            @include border-radius(50px);
+            padding-left: 5rem;
+            padding-right: 5rem;
+            min-width: 250px;
+            text-align: center;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        p {
+            margin-bottom: 2.5rem;
+            color: #555555;
+            font-size: 13px;
+            a {
+                color: $color-text;
+            }
+            strong {
+                font-weight: 600;
+                color: $color-heading;
+                a {
+                    color: $color-heading;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}

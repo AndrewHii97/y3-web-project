@@ -1,0 +1,50 @@
+.ps-product__info
+    h1 Front knotted crepe body
+    h4.ps-product__price <del><span>$</span>168.99</del> - <span>$</span>178.99
+
+    .ps-product__rating
+        +rating
+        span 4.62  <i>|</i>  21 Reviews
+    .ps-product__desc
+        ul
+            li Model is 6’1” Wearing size M
+            li Slim Fit
+            li 100% linen Machine wash cold, tumble dry low
+            li Made in Shenzhen, China
+    figure
+        +checkbox('color-1', 'color', '' ,'ps-checkbox--inline ps-checkbox--color color-1', '')
+        +checkbox('color-2', 'color', '' ,'ps-checkbox--inline ps-checkbox--color color-2', '')
+        +checkbox('color-3', 'color', '' ,'ps-checkbox--inline ps-checkbox--color color-3', '')
+        +checkbox('color-4', 'color', '' ,'ps-checkbox--inline ps-checkbox--color color-4', '')
+        +checkbox('color-5', 'color', '' ,'ps-checkbox--inline ps-checkbox--color color-5', '')
+        +checkbox('color-6', 'color', '' ,'ps-checkbox--inline ps-checkbox--color color-6', '')
+    figure
+        figcaption Select a size
+        +checkbox('size-2', 'size', 'XSS', 'ps-checkbox--size ps-checkbox--inline', '')
+        +checkbox('size-3', 'size', 'XS', 'ps-checkbox--size ps-checkbox--inline', '')
+        +checkbox('size-4', 'size', 'S', 'ps-checkbox--size ps-checkbox--inline', '')
+        +checkbox('size-5', 'size', 'M', 'ps-checkbox--size ps-checkbox--inline', '')
+
+    figure
+        figcaption Qty
+        .ps-product__shopping
+            .ps-form--number
+                span.ps-form__up: i.fa.fa-angle-up
+                span.ps-form__down: i.fa.fa-angle-down
+                input(type="text" placeholder="" value=1).form-control
+    .ps-product__shopping
+        button.ps-btn.ps-btn--black.text-uppercase + Add to bag
+        button.ps-btn.ps-btn--outline
+            i.icon-heart-o
+            |  Add to whishlist
+    .ps-product__specification
+        p
+            strong Categories:
+            a(href='product-listing.html') Women
+            | ,
+            a(href='product-listing.html')  Clothing
+            | ,
+            a(href='product-listing.html')  Demin
+            | ,
+            a(href='product-listing.html')  Shoes
+            a(href='product-listing.html')  Accessories

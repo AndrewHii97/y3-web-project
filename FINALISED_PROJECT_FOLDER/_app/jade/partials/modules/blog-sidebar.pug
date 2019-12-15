@@ -1,0 +1,65 @@
+.widget.widget_sidebar.widget_search
+    form(action="do_action" method="post" class="ps-form--widget-search")
+        input.form-control(type="text" placeholder="Blog Search...")
+        button.ps-btn: i.fa.fa-search
+.widget.widget_sidebar.widget_category
+    h3.widget-title Categories
+    ul
+        li: a(href='product-list.html') New York
+        li: a(href='product-list.html') London SF
+        li: a(href='product-list.html') Cockfosters BP
+        li: a(href='product-list.html') Los Angeles
+        li: a(href='product-list.html') Chicago
+        li: a(href='product-list.html') Las Vegas
+.widget.widget_sidebar.widget_achived
+    h3.widget-title Achived
+    ul
+        li: a(href='product-list.html')
+            i.icon-calendar
+            |  August 2018
+        li: a(href='product-list.html')
+            i.icon-calendar
+            |  July 2018
+        li: a(href='product-list.html')
+            i.icon-calendar
+            |  June 2018
+        li: a(href='product-list.html')
+            i.icon-calendar
+            |  May 2018
+.widget.widget_sidebar.widget_recent-post
+    h3.widget-title Recent Post
+    .ps-post--footer
+        .ps-post__thumbnail: a(href='#'): img(src="img/posts/footer-1.png" alt="")
+        .ps-post__content
+            a(href='blog-detail.html') Roche Petite Gold White
+            p
+                span July 22, 2018
+                span 1 Comment
+    .ps-post--footer
+        .ps-post__thumbnail: a(href='#'): img(src="img/posts/footer-2.png" alt="")
+        .ps-post__content
+            a(href='blog-detail.html') Roche Petite Gold White
+            p
+                span July 22, 2018
+                span 1 Comment
+    .ps-post--footer
+        .ps-post__thumbnail: a(href='#'): img(src="img/posts/footer-1.png" alt="")
+        .ps-post__content
+            a(href='blog-detail.html') Roche Petite Gold White
+            p
+                span July 22, 2018
+                span 1 Comment
+    .ps-post--footer
+        .ps-post__thumbnail: a(href='#'): img(src="img/posts/footer-2.png" alt="")
+        .ps-post__content
+            a(href='blog-detail.html') Roche Petite Gold White
+            p
+                span July 22, 2018
+                span 1 Comment
+.widget.widget_sidebar.widget_comment
+    h3.widget-title Comment
+    ul
+        - for (var i = 0; i < 5; i ++)
+            li
+                i.icon-message-circle
+                a(href='#') Curabitur iaculis, ullamcorper

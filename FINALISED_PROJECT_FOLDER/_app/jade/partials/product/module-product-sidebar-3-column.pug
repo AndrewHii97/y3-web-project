@@ -1,0 +1,53 @@
+.ps-product-list
+    .ps-section__header.bg--cover(data-background="img/pages/product-sidebar.jpg")
+        h3 Women's
+    .ps-section__content
+        .ps-filter
+            .ps-filter__header
+                figure
+                    .form-group
+                        label Sortby:
+                        select.ps-select
+                            option(value='1') Populaly
+                            option(value='2') Price Increase
+                            option(value='3') Price Descrease
+                    .ps-pagination
+                        p Brower:
+                        ul.pagination
+                            li.active: a(href="#") 1
+                            li: a(href="#") 2
+                            li: a(href="#") 3
+        .row
+            each val in arrivals
+                +column({cols: [4, 4, 6, 6, 12]})
+                    .ps-product
+                        .ps-product__thumbnail
+                            if val.sale == true
+                                span.ps-product__badge: i 45% <br> off
+                            a(href='product-detail.html').ps-product__overlay
+                            img(src=val.thumbnail alt="")
+                            ul.ps-product__actions
+                                li: a(href='#'): i.icon-heart-o
+                                li: a(href='#'): i.icon-bar-chart
+                                li: a(href='#'): i.icon-eye3
+                            a(href='cart.html').ps-product__shopping + Quick add
+                        .ps-product__content
+                            .ps-product__meta
+                                a(href='#') #{val.category}
+                                if val.color == true
+                                    .ps-product__color
+                                        a(href='#').ps-color.ps-color--1
+                                        a(href='#').ps-color.ps-color--2
+                                        a(href='#').ps-color.ps-color--3
+                            a(href='product-detail.html').ps-product__title #{val.title}
+                            p.ps-product__price
+                                if val.saleOfPrice != ''
+                                    del #{val.saleOfPrice}
+                                    | -
+                                |  #{val.price}
+                            if val.star == true
+                                +rating
+                            if val.review == true
+                                span.ps-product__rating 4 Review available
+    .ps-section__footer
+        +pagination

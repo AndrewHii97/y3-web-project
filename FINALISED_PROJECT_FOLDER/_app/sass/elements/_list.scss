@@ -1,0 +1,301 @@
+.ps-list--social {
+    margin: 0;
+    padding: 0;
+    li {
+        position: relative;
+        display: inline-block;
+        margin-right: 10px;
+        vertical-align: top;
+        a {
+            display: inline-block;
+            font-size: 20px;
+            line-height: 20px;
+            color: $color-1st;
+
+            &.facebook {
+                i {
+                    color: #3b5999;
+                }
+            }
+            &.instagram {
+                i {
+                    color: #e4405f;
+                }
+            }
+            &.vimeo {
+                i {
+                    color: #1ab7ea;
+                }
+            }
+            &.behance {
+                i {
+                    color: #131418;
+                }
+            }
+            &.linkedin {
+                i {
+                    color: #0077B5;
+                }
+            }
+            &:hover {
+                i {
+                    color: $color-1st;
+                }
+            }
+        }
+    }
+}
+
+.ps-list--pricing {
+    li {
+        position: relative;
+        padding: 1.5rem 2rem;
+        @include clearfix();
+        background-color: #ffffff;
+        vertical-align: top;
+        color: #000000;
+        span {
+            float: right;
+            vertical-align: top;
+        }
+        &:nth-child(even) {
+            background-color: #f7f4ee;
+        }
+    }
+}
+
+.ps-list--checked {
+    li {
+        margin-bottom: 20px;
+        a {
+            position: relative;
+            display: block;
+            padding-left: 30px;
+            font-size: 14px;
+            color: #313131;
+            &:before {
+                display: inline-block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                content: '';
+                width: 20px;
+                height: 20px;
+                border: solid 1px #8d8d8d;
+                @include transition(all .4s ease);
+            }
+            &:after {
+                content: '';
+                display: inline-block;
+                position: absolute;
+                top: 4px;
+                left: 8px;
+                color: #fff;
+                width: 6px;
+                height: 10px;
+                border-right: 2px solid #fff;
+                border-bottom: 2px solid #fff;
+                @include transform(rotate(45deg));
+                @include hidden;
+            }
+            &:hover {
+                &:before {
+                    background-color: $color-1st;
+                    border-color: $color-1st;
+                }
+                &:after {
+                    @include show;
+                }
+            }
+        }
+
+        &.current {
+            a {
+                &:before {
+                    background-color: $color-1st;
+                    border-color: $color-1st;
+                }
+                &:after {
+                    @include show;
+                }
+            }
+        }
+    }
+    &.ps-list--checked-circle {
+        li {
+            a {
+                &:before {
+                    @include border-radius(50%);
+                }
+                &:hover {
+                    &:before {
+                        background-color: #a7a7a7;
+                        border-color: #a7a7a7;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ps-list--arrow {
+    a {
+        position: relative;
+        display: block;
+        padding-left: 15px;
+        font-family: $font-1st;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        color: #626262;
+        &:before {
+            content: "\f0da";
+            @include vertical-align();
+            left: 0;
+            font-family: FontAwesome;
+        }
+        &:hover {
+            color: $color-1st;
+            .circle {
+                background-color: $color-2nd;
+                border-color: $color-2nd;
+                &:before {
+                    color: #fff;
+                    @include show;
+                }
+            }
+        }
+    }
+
+    li {
+        margin-bottom: 20px;
+        &.current {
+            a {
+                color: $color-2nd;
+            }
+            .circle {
+                background-color: $color-2nd;
+                &:before {
+                    @include show;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+.ps-list--dot {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 2rem;
+    list-style-type: none;
+    li {
+        margin-bottom: 1rem;
+        position: relative;
+        padding-left: 20px;
+        font-size: 1.4rem;
+        color: #000000;
+        line-height: 20px;
+        &:before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 0;
+            width: 6px;
+            height: 6px;
+            background-color: #000000;
+            @include border-radius(50%);
+        }
+    }
+    @include media("<sm") {
+        li {
+            font-size: 1.8rem;
+        }
+    }
+}
+
+.ps-list--filter {
+    li {
+        a {
+            display: block;
+            padding: .8rem 0;
+            font-size: 1.4rem;
+            color: #777;
+            line-height: 20px;
+            &:hover {
+                color: $color-2nd;
+            }
+        }
+        &.current {
+            > a {
+                color: $color-2nd;
+            }
+        }
+    }
+}
+
+.ps-mega {
+    > li {
+        display: block;
+        > a {
+            display: block;
+            padding: 1.8rem 2rem;
+            font-weight: 500;
+            font-size: 1.5rem;
+            line-height: 20px;
+            color: #414861;
+            &:hover {
+                color: #ffffff;
+                background-color: #5e6b9d;
+            }
+        }
+        &:nth-child(even) {
+            background-color: #fff;
+            background-color: #fff6ef;
+        }
+        &.has-sub {
+            > a {
+                position: relative;
+                &:before {
+                    content: '\f105';
+                    font-family: FontAwesome;
+                    @include vertical-align();
+                    right: 15px;
+                }
+            }
+            &:hover {
+                .ps-mega__content {
+                    @include show;
+                }
+            }
+
+        }
+    }
+    .ps-mega__content {
+        position: absolute;
+        top: 0;
+        left: 100%;
+        width: calc(1200px - 280px);
+        height: 100%;
+        padding: 3rem;
+        z-index: 999;
+        background-color: #efefef;
+        @include transition(all .4s ease);
+        @include hidden;
+        overflow-y: auto;
+        .ps-collection {
+            display: block;
+            margin-bottom: 3rem;
+        }
+    }
+    @include media("<lg") {
+        .ps-mega__content {
+            position: relative;
+            top: 0;
+            left: 0;
+            @include show;
+            width: 100%;
+            @include transition(all 0s ease);
+            display: none;
+        }
+    }
+}

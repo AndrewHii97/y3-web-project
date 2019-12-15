@@ -1,0 +1,134 @@
+include ../../data/products
+
+.ps-home-sidebar
+    .container
+        .row
+            +column({cols: [3, 3, 12, 12, 12]})
+                .ps-sidebar.ps-sidebar--home
+                    .ps-sidebar__header
+                        a(href='#')
+                            .ps-btn--hamburger: span
+                            |  Show Categories
+                    .ps-sidebar__content
+                        aside.widget.widget_sidebar.widget_list
+                            ul.ps-list--dropdown
+                                li: a(href='#') Women’s All
+                                li: a(href='#') Men’s All
+                                li: a(href='#') New In
+                                li: a(href='#') Best Seller
+                                li: a(href='#') Demin
+                                li: a(href='#') Tees
+                                li: a(href='#') Tops
+                                li: a(href='#') Sweaters & Sweatshirts
+                                li: a(href='#') Dresses
+                                li: a(href='#') Bottoms
+                                li: a(href='#') Outerwear
+                                li: a(href='#') Underwear
+                                li: a(href='#') Shoes
+                                li: a(href='#') Handbags
+                                li: a(href='#') Backpacks & Bags
+                                li: a(href='#') Accessories
+                        aside.widget.widget_shop.widget_products
+                            h3.widget-title On Sale
+                            .ps-product--sidebar
+                                .ps-product__thumbnail: a(href='product-detail.html'): img(src="img/products/sidebar-1.jpg" alt="")
+                                .ps-product__content
+                                    span Men
+                                    a(href='product-detail.html') Striped T-shirt
+                                    p $38.99
+                            .ps-product--sidebar
+                                .ps-product__thumbnail: a(href='product-detail.html'): img(src="img/products/sidebar-2.jpg" alt="")
+                                .ps-product__content
+                                    span Men
+                                    a(href='product-detail.html') Roche Petite Gold White
+                                    p <del>$168.99</del> – $178.99
+                            .ps-product--sidebar
+                                .ps-product__thumbnail: a(href='product-detail.html'): img(src="img/products/sidebar-3.jpg" alt="")
+                                .ps-product__content
+                                    span Men
+                                    a(href='product-detail.html') Red sport shoes
+                                    p $38.99
+                        aside.widget.widget_shop.widget_products
+                            h3.widget-title Top Rated
+                            .ps-product--sidebar
+                                .ps-product__thumbnail: a(href='product-detail.html'): img(src="img/products/sidebar-3.jpg" alt="")
+                                .ps-product__content
+                                    span Men
+                                    a(href='product-detail.html') Striped T-shirt
+                                    p $38.99
+                            .ps-product--sidebar
+                                .ps-product__thumbnail: a(href='product-detail.html'): img(src="img/products/sidebar-4.jpg" alt="")
+                                .ps-product__content
+                                    span Men
+                                    a(href='product-detail.html') Roche Petite Gold White
+                                    p <del>$168.99</del> – $178.99
+                            .ps-product--sidebar
+                                .ps-product__thumbnail: a(href='product-detail.html'): img(src="img/products/sidebar-5.jpg" alt="")
+                                .ps-product__content
+                                    span Men
+                                    a(href='product-detail.html') Red sport shoes
+                                    p $38.99
+                        aside.widget.widget_shop.widget_products
+                            h3.widget-title Top Sales
+                            .ps-product--sidebar
+                                .ps-product__thumbnail: a(href='product-detail.html'): img(src="img/products/sidebar-5.jpg" alt="")
+                                .ps-product__content
+                                    span Men
+                                    a(href='product-detail.html') Striped T-shirt
+                                    p $38.99
+                            .ps-product--sidebar
+                                .ps-product__thumbnail: a(href='product-detail.html'): img(src="img/products/sidebar-6.jpg" alt="")
+                                .ps-product__content
+                                    span Men
+                                    a(href='product-detail.html') Roche Petite Gold White
+                                    p <del>$168.99</del> – $178.99
+                            .ps-product--sidebar
+                                .ps-product__thumbnail: a(href='product-detail.html'): img(src="img/products/sidebar-7.jpg" alt="")
+                                .ps-product__content
+                                    span Men
+                                    a(href='product-detail.html') Red sport shoes
+                                    p $38.99
+            +column({cols: [9, 9, 12, 12, 12]})
+                .ps-home-banner
+                    .owl-slider(
+                    data-owl-auto= 'true',
+                    data-owl-loop= 'true',
+                    data-owl-speed= '5000',
+                    data-owl-gap= '0',
+                    data-owl-nav= 'false',
+                    data-owl-dots= 'false',
+                    data-owl-item= '1',
+                    data-owl-item-xs= '1',
+                    data-owl-item-sm= '1',
+                    data-owl-item-md= '1',
+                    data-owl-item-lg= '1',
+                    data-owl-duration= '1000',
+                    data-owl-mousedrag= 'on'
+                    )
+                        .ps-banner--7: a(href='#'): img(src="img/banner/home-7/1.jpg" alt="")
+                        .ps-banner--7: a(href='#'): img(src="img/banner/home-7/2.jpg" alt="")
+                - for (var i = 0; i < 3; i ++)
+                    .ps-block--category-2
+                        if i == 0
+                            h3 Shop For Men’s
+                        else if i == 1
+                            h3 Shop For Women’s
+                        else
+                            h3 Shop For Accessories’s
+                        .ps-block__content
+                            .row
+                                if i == 0
+                                    each val, index in arrivals
+                                        if index < 3
+                                            +column({cols: [4, 4, 4, 6, 12]})
+                                                +product(val)
+                                if i == 1
+                                    each val, index in arrivals
+                                        if index < 3
+                                            +column({cols: [4, 4, 4, 6, 12]})
+                                                +product(val)
+                                if i == 2
+                                    each val, index in accsess
+                                        if index < 3
+                                            +column({cols: [4, 4, 4, 6, 12]})
+                                                +product(val)

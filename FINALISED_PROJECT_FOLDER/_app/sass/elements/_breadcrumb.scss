@@ -1,0 +1,51 @@
+.ps-breadcrumb {
+    padding: 10px 0;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    text-align: center;
+    .breadcrumb {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        background-color: transparent;
+        li {
+            display: inline-block;
+            font-size: 1.2rem;
+            line-height: 20px;
+            color: #777;
+            &:before {
+                content: "/";
+                margin: 0 5px;
+            }
+            &:first-child {
+                padding-left: 0;
+                &:before {
+                    display: none;
+                }
+            }
+        }
+        a {
+            font-size: 16px;
+            font-size: 1.2rem;
+            line-height: 20px;
+            color: #777;
+            &:hover {
+                color: $color-1st;
+            }
+            i {
+                margin-right: 5px;
+            }
+        }
+    }
+    @include media("<md") {
+        position: relative;
+        .breadcrumb {
+            li {
+                font-size: 12px;
+            }
+            a {
+                font-size: 12px;
+            }
+        }
+    }
+}

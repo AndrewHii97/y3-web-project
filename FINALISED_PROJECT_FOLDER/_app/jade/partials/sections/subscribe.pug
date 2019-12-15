@@ -1,0 +1,33 @@
+if subscribe === 'gray'
+    .ps-subscribe.ps-subscribe--gray.bg--cover(data-background="img/bg/subscribe-gray.jpg")
+        .container
+            form(action="do_action" method="post" class="ps-form--subscribe")
+                p <strong>Subscribe Now</strong> For Coupons, Newsletters, and More!
+                .form-group
+                    .form-group__content
+                        i.icon-envelope4
+                        input.form-control(type="text" placeholder="Enter email address...")
+                    .form-group__submit
+                        button.ps-btn Sign Up
+else if subscribe === 'white'
+    .ps-subscribe.ps-subscribe--white
+        .container
+            form(action="do_action" method="post" class="ps-form--subscribe")
+                p <strong>Subscribe Now</strong> For Coupons, Newsletters, and More!
+                .form-group
+                    .form-group__content
+                        i.icon-envelope4
+                        input.form-control(type="text" placeholder="Enter email address...")
+                    .form-group__submit
+                        button.ps-btn Sign Up
+else
+    .ps-subscribe.bg--cover(data-background="img/bg/subscribe.jpg")
+        .container
+            form(action="do_action" method="post" class="ps-form--subscribe")
+                p <strong>Subscribe Now</strong> For Coupons, Newsletters, and More!
+                .form-group
+                    .form-group__content
+                        i.icon-envelope4
+                        input.form-control(type="text" placeholder="Enter email address...")
+                    .form-group__submit
+                        button.ps-btn Sign Up

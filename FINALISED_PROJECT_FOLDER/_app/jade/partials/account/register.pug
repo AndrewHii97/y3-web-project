@@ -1,0 +1,18 @@
+.ps-account
+    .container
+        form(action="do_action" method="post" class="ps-form--account")
+            .ps-form__header
+                h3 Register
+            .ps-form__content
+                .form-group
+                    label Email Address <sup>*</sup>
+                    input.form-control(type="text" placeholder="")
+                .form-group
+                    label Password <sup>*</sup>
+                    input.form-control(type="password" placeholder="")
+                .form-group.submit
+                    p Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our privacy policy.
+                    button.ps-btn.ps-btn--outline.ps-btn--black Register
+                    p
+                        strong  or
+                            a(href='login.html')  Login

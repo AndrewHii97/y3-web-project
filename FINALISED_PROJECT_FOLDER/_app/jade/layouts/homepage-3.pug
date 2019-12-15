@@ -1,0 +1,25 @@
+extends ../master
+
+block page_header
+    - var currentPage = 'homepage'
+    include ../shared/header-5
+
+block page_content
+    #homepage-3
+        include ../partials/home-3/banner
+        //-include ../partials/sections/about-us
+        include ../partials/sections/product-categories
+        include ../partials/sections/site-features
+        include ../partials/sections/video
+        include ../partials/sections/new-arrivals
+        - let countdown = 'second';
+        include ../partials/sections/countdown
+        include ../partials/sections/our-blogs
+        - let subscribe = 'gray';
+        include ../partials/sections/subscribe
+        include ../shared/footer
+    include ../partials/modules/subscribe-popup
+
+
+
+

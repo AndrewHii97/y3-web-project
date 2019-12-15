@@ -1,0 +1,28 @@
+extends ../master
+
+block page_header
+
+    - var currentPage = 'homepage'
+    include ../shared/header-2
+
+block page_content
+
+    .ps-hero.ps-hero--lookbook.bg--top(data-background="img/bg/lookbook.jpg")
+        .container
+            .ps-hero__content
+                h5 Shop The Lookbook
+                h1 Spring ‘17 Collection
+                p Mauris interdum magna eu neque convallis, vel laoreet lectus <br> ultrices. Mauris at ullamcorper orci.
+                a(href='#').ps-btn.ps-btn--outline Lookbook Now
+    .ps-page
+        include ../partials/sections/lookbook-1
+        include ../partials/sections/product-hot-pot
+        include ../partials/sections/shop-the-collection
+        //include ../partials/sections/partners
+        - let subscribe = "gray";
+        include ../partials/sections/subscribe
+    include ../shared/footer
+
+
+
+

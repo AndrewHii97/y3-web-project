@@ -1,0 +1,44 @@
+mixin post(img, title)
+    .ps-post
+        .ps-post__thumbnail
+            a(href='blog-detail.html').ps-post__overlay
+            //-img(src="img/posts/4.jpg" alt="")
+            img(src=img alt="")
+            span.ps-post__posted July 22, 2018
+        .ps-post__content
+            //-a(href='blog-detail.html').ps-post__title Condimentum adipiscing dis nam parturient
+            a(href='blog-detail.html').ps-post__title #{title}
+            .ps-post__meta
+                span
+                    img(src="img/user/3.jpg" alt="")
+                    | Posted by <a href="#">Logan</a>
+                span
+                    i.icon-message-circle
+                    | 2
+            p Praesent volutpat ut nisl in hendrerit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Etiam porttitor
+            a(href='blog-detail.html').ps-post__morelink Continue Reading
+.ps-blog
+    .ps-block--post-feature
+        .row
+            +column({cols: [6, 6, 12, 12]})
+                +post('img/posts/1.jpg', 'Mark R. McMann Fall/Winter 2017 Collection')
+                .row
+                    +column({cols: [6, 6, 6, 12]}): +post('img/posts/2.jpg', 'Perfected with great effort and passion')
+                    +column({cols: [6, 6, 6, 12]}): +post('img/posts/3.jpg', 'Perfected with great effort and passion')
+            +column({cols: [6, 6, 12, 12]})
+                .row
+                    +column({cols: [6, 6, 6, 12]}): +post('img/posts/4.jpg', 'Perfected with great effort and passion')
+                    +column({cols: [6, 6, 6, 12]}): +post('img/posts/5.jpg', 'Perfected with great effort and passion')
+                +post('img/posts/6.jpg', 'Mark R. McMann Fall/Winter 2017 Collection')
+    .ps-section__content
+        .row
+            +column({cols: [3, 3, 4, 6, 12]}): +post('img/posts/1.jpg', 'Perfected with great effort and passion')
+            +column({cols: [3, 3, 4, 6, 12]}): +post('img/posts/2.jpg', 'Perfected with great effort and passion')
+            +column({cols: [3, 3, 4, 6, 12]}): +post('img/posts/3.jpg', 'Perfected with great effort and passion')
+            +column({cols: [3, 3, 4, 6, 12]}): +post('img/posts/4.jpg', 'Perfected with great effort and passion')
+            +column({cols: [3, 3, 4, 6, 12]}): +post('img/posts/5.jpg', 'Perfected with great effort and passion')
+            +column({cols: [3, 3, 4, 6, 12]}): +post('img/posts/6.jpg', 'Perfected with great effort and passion')
+            +column({cols: [3, 3, 4, 6, 12]}): +post('img/posts/7.jpg', 'Perfected with great effort and passion')
+            +column({cols: [3, 3, 4, 6, 12]}): +post('img/posts/8.jpg', 'Perfected with great effort and passion')
+    .ps-section__footer
+        a(href='#').ps-btn.ps-btn--outline.ps-btn--black Load More

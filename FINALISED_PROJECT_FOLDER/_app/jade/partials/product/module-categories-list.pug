@@ -1,0 +1,49 @@
+.ps-product-list
+    .ps-section__header.bg--cover(data-background="img/pages/men.jpg")
+        h3 Men
+    .ps-section__content
+        .ps-filter
+            .ps-filter__header
+                figure
+                    .form-group
+                        label Sortby:
+                        select.ps-select
+                            option(value='1') Populaly
+                            option(value='2') Price Increase
+                            option(value='3') Price Descrease
+                    .ps-pagination
+                        p Brower:
+                        ul.pagination
+                            li.active: a(href="#") 1
+                            li: a(href="#") 2
+                            li: a(href="#") 3
+        each val, index in arrivals
+                .ps-product--horziontal
+                    .ps-product__thumbnail
+                        if val.sale == true
+                            span.ps-product__badge: i 45% <br> off
+                        a(href='product-detail.html').ps-product__overlay
+                        img(src=val.thumbnail alt="")
+                        ul.ps-product__actions
+                            li: a(href='#'): i.icon-heart-o
+                            li: a(href='#'): i.icon-bar-chart
+                            li: a(href='#'): i.icon-eye3
+                        a(href='cart.html').ps-product__shopping + Quick add
+                    .ps-product__content
+                        a(href='product-detail.html').ps-product__title #{val.title}
+                        p.ps-product__price
+                            if val.saleOfPrice != ''
+                                del #{val.saleOfPrice}
+                                | -
+                            |  #{val.price}
+                        .ps-product__meta
+                            .ps-product__color
+                                a(href='#').ps-color.ps-color--1
+                                a(href='#').ps-color.ps-color--2
+                                a(href='#').ps-color.ps-color--3
+                        .ps-product__desc
+                            p Natural, refined, and comfortable. Linen is naturally breathable and has a texture that looks even better wrinkled. This short-sleeve shirt is a classic warm-weather choice for good reason.
+                        .ps-product__rating
+                            +rating
+    .ps-section__footer
+        +pagination

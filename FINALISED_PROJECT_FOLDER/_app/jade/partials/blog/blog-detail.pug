@@ -1,0 +1,36 @@
+.ps-post--detail(class=(blogDetail) ? "ps-post--modern" : '')
+    .container
+        if blogDetail == 'modern'
+            img(src="img/post/detail-modern.jpg" alt="")
+        .ps-post__header
+            h1 Mark R. McMann Fall/Winter 2017 Collection
+            .ps-post__meta
+                span
+                    img(src="img/user/3.jpg" alt="")
+                    | Posted by <a href="#">Logan</a>
+                span
+                    i.icon-message-circle
+                    | 2
+        .ps-post__content.ps-document
+            .row.mb-30
+                +column({cols: [5, 4, 4, 12, 12]})
+                    img(src="img/post/detail-1.jpg" alt="")
+                +column({cols: [7, 8, 8, 12, 12]})
+                    img(src="img/post/detail-2.jpg" alt="")
+            p Aenean sit amet odio est. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris quis est lobortis odio dignissim rutrum. Pellentesque blandit lacinia diam, a tincidunt felis tempus eget. Donec egestas metus non vehicula accumsan. Pellentesque sit amet tempor nibh. Mauris in risus lorem. Cras malesuada gravida massa eget viverra. Suspendisse vitae dolor erat. Morbi id rhoncus enim. In hac habitasse platea dictumst. Aenean lorem diam, venenatis nec venenatis id, adipiscing ac massa. Nam vel dui eget justo dictum pretium a rhoncus ipsum.
+            img(src="img/post/detail-3.jpg" alt="").mb-30
+            blockquote
+                p “ Quisque ornare est at felis consectetur mollis. Aliquam vitae metus et enim posuere ornare. Praesent sapien erat, pellentesque quis sollicitudin eget, imperdiet bibendum magna”
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non placerat mi. Etiam non tellus sem. Aenean pretium convallis lorem, sit amet dapibus ante mollis a. Integer bibendum interdum sem, eget volutpat purus pulvinar in. Sed tristique augue vitae sagittis porta. Phasellus ullamcorper, dolor suscipit mattis viverra, sapien elit condimentum odio, ut imperdiet nisi risus sit amet ante. Sed sem lorem, laoreet et facilisis quis, tincidunt non lorem. Etiam tempus, dolor in sollicitudin faucibus, sem massa accumsan erat, sit amet laoreet eros metus eu mauris. Donec in suscipit nisl. Nullam eu sollicitudin tellus. Nulla aliquet turpis eget sodales scelerisque. Ut accumsan rhoncus sapien a dignissim. Sed vel ipsum nunc. Aliquam erat volutpat. Donec et dignissim elit. Etiam condimentum, ante sed rutrum auctor,
+        .ps-post__footer
+            p Categories:
+                a(href='#') Women
+                | ,
+                a(href='#') Clothing
+                | ,
+                a(href='#') Demin
+                | ,
+                a(href='#') Clothing
+                | ,
+                a(href='#') Shoes
+

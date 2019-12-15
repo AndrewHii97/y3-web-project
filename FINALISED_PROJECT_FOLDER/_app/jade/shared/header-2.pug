@@ -1,0 +1,37 @@
+include ../data/menu
+// header
+header.header.header--2.header--2-full(data-sticky='true')
+    nav.navigation
+        .navigation__left
+            a(href='#').menu__action
+                .menu-toggle: span
+                span Menu
+            .ps-block--phone-number
+                .ps-block__left
+                    i.icon-phone-call
+                .ps-block__right
+                    p Call us Now: <br> + 1-23345-687
+            +makeMenu(menu_2_1, 'menu')
+        .navigation__center
+            a(href='index.html').ps-logo: img(src="img/logo-black.png" alt="")
+        .navigation__right
+            +makeMenu(menu_2_2, 'menu')
+            .header__actions
+                a(href='#login').header__login.ps-modal-link
+                    i.icon-user3
+                    strong  Login
+                    |  or Register
+                a(href='#').ps-search-btn: i.icon-search3
+                include cart
+nav.navigation--sidebar
+    +makeMenu(data_navigation, 'menu')
+header.header--mobile
+    nav.navigation
+        .container
+            .menu-toggle: span
+            a(href='index.html').ps-logo: img(src="img/logo.png" alt="")
+            .header__actions
+                a(href='#').ps-search-btn: i.aroma-magnifying-glass
+                include cart
+nav.navigation--mobile.visible-lg
+    +makeMenu(data_navigation, 'menu')

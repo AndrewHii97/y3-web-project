@@ -1,0 +1,19 @@
+extends ../../master
+
+block page_header
+
+    - var currentPage = 'blog'
+    include ../../shared/header-2
+
+block page_content
+    #blog-fullwidth
+        include ../../partials/blog/blog-fullwidth
+        include ../../partials/sections/partners
+        - let subscribe = "gray";
+        include ../../partials/sections/subscribe
+
+    include ../../shared/footer
+
+
+
+

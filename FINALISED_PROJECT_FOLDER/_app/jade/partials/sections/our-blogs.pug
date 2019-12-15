@@ -1,0 +1,56 @@
+.ps-section.ps-our-blogs
+    .container
+        .ps-section__header
+            h3 Our Blogs
+            p Items that worth the hype
+        .ps-section__content
+            .row
+                - for (var i = 0; i < 3; i ++)
+                    +column({cols: [4, 4, 12, 12]})
+                        .ps-post
+                            .ps-post__thumbnail
+                                a(href='blog-detail.html').ps-post__overlay
+                                if i == 0
+                                    img(src="img/posts/2.jpg" alt="")
+                                else if i == 1
+                                    img(src="img/posts/3.jpg" alt="")
+                                else
+                                    img(src="img/posts/4.jpg" alt="")
+                                span.ps-post__posted July 22, 2018
+                            .ps-post__content
+                                if i == 0
+                                    a(href='blog-detail.html').ps-post__title Perfected with great effort and passion
+                                else
+                                    a(href='blog-detail.html').ps-post__title Condimentum adipiscing dis nam parturient
+                                .ps-post__meta
+                                    span
+                                        img(src="img/user/3.jpg" alt="")
+                                        | Posted by <a href="#">Logan</a>
+                                    span
+                                        i.icon-message-circle
+                                        | 2
+                                p Praesent volutpat ut nisl in hendrerit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Etiam porttitor
+                                a(href='blog-detail.html').ps-post__morelink Continue Reading
+                                    i.icon-play-circle
+
+            .ps-carousel--nav.owl-slider(
+             data-owl-auto= 'true',
+             data-owl-loop= 'true',
+             data-owl-speed= '5000',
+             data-owl-gap= '0',
+             data-owl-nav= 'true',
+             data-owl-dots= 'true',
+             data-owl-item= '6',
+             data-owl-item-xs= '3',
+             data-owl-item-sm= '3',
+             data-owl-item-md= '4',
+             data-owl-item-lg= '5',
+             data-owl-duration= '1000',
+             data-owl-mousedrag= 'off'
+            )
+                a(href='#'): img(src="img/partners/1.jpg" alt="")
+                a(href='#'): img(src="img/partners/2.jpg" alt="")
+                a(href='#'): img(src="img/partners/3.jpg" alt="")
+                a(href='#'): img(src="img/partners/4.jpg" alt="")
+                a(href='#'): img(src="img/partners/5.jpg" alt="")
+                a(href='#'): img(src="img/partners/6.jpg" alt="")

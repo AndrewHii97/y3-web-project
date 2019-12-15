@@ -1,0 +1,13 @@
+include ../../data/products
+.ps-shopping.ps-shopping--5-columns
+    include ../modules/product-filter
+    .ps-shopping__content
+        .row
+            each val, index in arrivals
+                if index < 5
+                    +column({cols: [3, 3, 4, 6, 12]}): +product(val)
+            each val, index in arrivals
+                if index < 5
+                    +column({cols: [3, 3, 4, 6, 12]}): +product(val)
+    .ps-shopping__footer.text-center
+        a(href='#').ps-btn.ps-btn--outline.ps-btn--black Load More

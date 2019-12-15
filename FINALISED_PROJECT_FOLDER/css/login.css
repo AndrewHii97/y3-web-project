@@ -1,0 +1,127 @@
+.mediaViewInfo {
+	--web-view-name: login;
+	--web-view-id: login;
+	--web-center-horizontally: true;
+	--web-enable-deep-linking: true;
+}
+
+:root {
+	--web-view-ids: login;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+}
+
+#background {
+	position: absolute;
+	box-sizing: border-box;
+	transform: translateX(-50%);
+	left: 50%;
+	background: #E5E5E5;
+	width: 1366px;
+	height: 768px;
+	background-color: rgba(239,237,234,1);
+	overflow: hidden;
+	--web-view-name: login;
+	--web-view-id: login;
+	--web-center-horizontally: true;
+	--web-enable-deep-linking: true;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: rgba(90,3,96,1);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 300px;
+  height: 59px;
+}
+
+#form_1 {
+	font-family: Open Sans;
+}
+
+.Rectangle_1 {
+/*	position: absolute;
+*/	overflow: visible;
+	width: 1366px;
+	height: 168px;
+	left: 0px;
+	top: 0px;
+}
+
+#logo {
+	opacity: 0.93;
+}
+.logo {
+	position: absolute;
+	overflow: visible;
+	width: 422px;
+	height: 123px;
+	left: 0px;
+	top: 0px;
+}
+
+#group1 {
+	position: absolute;
+	width: 1257.539px;
+	height: 123px;
+	left: 54px;
+	top: 23px;
+	overflow: visible;
+}
+
+#form_1 {
+	position: absolute;
+	overflow: visible;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-top: 25px;
+	padding-right: 10px;
+	background: rgba(255,255,255,1);
+	width: 855px;
+	height: 446px;
+	left: 255px;
+	top: 246px;
+}
+
+hr.line {
+	border-top: 2px solid rgba(97,97,97,1);
+}
+
+h2.header {
+	margin-left: 30px;
+	margin-top: -4px;
+	font-family: Open Sans;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 30px;
+	color: rgba(97,97,97,1);
+}
+
+#container1 {
+	margin-left: 10px;
+}
+
+#container2 {
+	text-align: center;
+}

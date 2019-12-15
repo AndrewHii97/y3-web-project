@@ -1,0 +1,14 @@
+extends ../master
+
+block page_header
+
+    - var currentPage = 'homepage'
+    include ../shared/header-2
+
+block page_content
+    .ps-page
+        include ../partials/pages/meet-a-team
+        include ../partials/sections/partners
+        - let subscribe = "gray";
+        include ../partials/sections/subscribe
+    include ../shared/footer

@@ -1,0 +1,23 @@
+extends ../../master
+
+block page_header
+
+    - var currentPage = 'product'
+    include ../../shared/header-2
+
+block page_content
+    .ps-breadcrumb
+            .container
+                ol.breadcrumb
+                    li: a(href="index.html") Home
+                    li.active Product Fullwidth
+    .ps-page
+        include ../../partials/product/product-sidebar-4-columns
+        include ../../partials/sections/partners
+        - let subscribe = "gray";
+        include ../../partials/sections/subscribe
+    include ../../shared/footer
+
+
+
+

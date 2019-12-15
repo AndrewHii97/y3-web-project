@@ -1,0 +1,35 @@
+if countdown == 'second'
+    .ps-home-countdown.second.bg--cover(data-background="img/bg/countdown-2.jpg")
+        .container
+            .row
+                +column({cols: [6, 7, 12, 12]})
+                    .ps-section__header
+                        p Deal of the day
+                        h3 Girl ethnic <br> embroidered blouse
+                        a(href='#').ps-btn.ps-btn--black Shop now
+                        ul.ps-countdown(data-time="July 21, 2019 15:37:25")
+                            li <span class="days"></span><p>days</p>
+                            li <span class="hours"></span><p>hours</p>
+                            li <span class="minutes"></span><p>minutes</p>
+                            li <span class="seconds"></span><p>sec</p>
+                +column({cols: [6, 5, 12, 12]})
+                    .ps-section__thumbnail
+                        img(src="img/bag.png" alt="")
+else
+    .ps-home-countdown
+        .ps-section__img: img(src="img/bg-layer/countdown.png" alt="")
+        .container
+            .row
+                +column({cols: [6, 7, 12, 12]})
+                    .ps-section__header
+                        p Deal of the day
+                        h3 Girl ethnic <br> embroidered blouse
+                        a(href='#').ps-btn.ps-btn--black Shop now
+                        ul.ps-countdown(data-time="July 21, 2019 15:37:25")
+                            li <span class="days"></span><p>days</p>
+                            li <span class="hours"></span><p>hours</p>
+                            li <span class="minutes"></span><p>minutes</p>
+                            li <span class="seconds"></span><p>sec</p>
+                +column({cols: [6, 5, 12, 12]})
+                    .ps-section__thumbnail
+                        img(src="img/coundown.jpg" alt="")
