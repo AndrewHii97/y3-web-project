@@ -65,28 +65,8 @@
                 </table>
                 <div id="paypal-button"></div>
                 <script src="https://www.paypalobjects.com/api/checkout.js"></script>
-
-                
-                <div>
-                    <form id="myForm" action="php/addTransaction.php" method="GET">
-                    <input hidden id="xdata" type="text" name="x" value="">
-                    <input hidden id="ydata" type="text" name="y" value="">
-                    <input hidden id="zdata" type="text" name="z" value="">
-                    <br><br>
-                    <input hidden type="submit" value="Submit">
-                    </form>
-                </div>
-
                 <script>
-                function sendForm(booknum) {
-                    // BOOKID
-                    // PAYMENT_AMOUNT 
-                    // PAYMENT_DATE
-                    document.getElementById("xdata").value = '';
-                    document.getElementById("myForm").submit();
-                }
-                
-                var globalTotal;
+                    var globalTotal;
                     paypal.Button.render({
                         // Configure environment
                         env: 'sandbox',
@@ -122,7 +102,23 @@
                         // Execute the payment
                         onAuthorize: function(data, actions) {
                             return actions.payment.execute().then(function() {
-                                
+                                var status = new Array();
+                                var item = new Array();
+                                var info = new Array();
+                                status = document.getElementsByClassName("buysell");
+                                item = document.getElementsByClassName("bid");
+                                console.log(status[0].value);
+                                console.log(item[0].value);
+                                info.push(globalTotal);
+                                for(var i=0; i<status.length; i++){
+                                    var obj = {state:status[i].value, bookid:item[i].value};
+                                    info.push(obj);
+                                }
+                                console.log(info.length);
+                                var dbParam = JSON.stringify(info);
+                                xmlhttp = new XMLHttpRequest();
+                                xmlhttp.open("GET", "../php/addTransaction.php?x=" + dbParam, true);
+                                xmlhttp.send();
                                 // Show a confirmation message to the buyer
                                 window.alert('Thank you for your purchase!');
 
@@ -138,6 +134,7 @@
     <p id="demo"></p>
     <script>
         requestJson();
+        
     </script>
 </body>
 
