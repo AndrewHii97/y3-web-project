@@ -16,7 +16,8 @@ if (!$result)
     echo "failed";
 }
 $outp = mysqli_fetch_all($result, MYSQLI_ASSOC);
+// $count = mysqli_num_rows($result);
 $conn->close();
-
+// $outp[$count]=$count;
 echo json_encode($outp);
 ?>

@@ -8,7 +8,23 @@ session_start();
   <meta charset="utf-8" />
   <title>BRSP</title>
 </head>
-
+<script>
+function showHint(str) {
+  if (str.length == 0) {
+    document.getElementById("txtHint").innerHTML = "";
+    return;
+  } else {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("txtHint").innerHTML = this.responseText;
+      }
+    };
+    xmlhttp.open("GET", "getSearchResult.php?q=" + str, true);
+    xmlhttp.send();
+  }
+}
+</script>
 <body>
   This is bookCategory of BRSP.
   <br>
@@ -18,6 +34,14 @@ session_start();
   <a href="../html/login.html">login</a><br>
   Hi <?php echo $_SESSION['username']?>!<br>
   <a href="profile.php">profile</a><br>
+
+  <br>
+<p><b>Start typing a name in the input field below:</b></p>
+<form>
+First name: <input type="text" onkeyup="showHint(this.value)">
+</form>
+<p>Suggestions: <span id="txtHint"></span></p><br>
+
   BOOK CATEGORY<br>
   <span id="all" onclick="sendCategory('')">all</span>
   <span id="Adventure" onclick="sendCategory('Adventure')">Adventure</span>
@@ -29,6 +53,12 @@ session_start();
   <span id="Sci-Fi" onclick="sendCategory('Sci-Fi')">Sci-Fi</span>
   <span id="Self-Help" onclick="sendCategory('Self-Help')">Self-Help</span>
   <span id="Suspense" onclick="sendCategory('Suspense')">Suspense</span>
+
+  <div id='content'>
+</div>
+
+<div id='scripting'>
+</div>
 
 <!-- 
 
@@ -62,6 +92,7 @@ session_start();
     </form>
   </div>
 
+
   <script>
     // var obj
     var xmlhttp, myObj, x, txt = "", dbParam;
@@ -74,6 +105,10 @@ session_start();
         var data = '?x=' + cat;
         callAjax(data);
     }
+    function runScript(scriptContent) {
+        var data = '?x=' + cat;
+        callAjax(data);
+    }
 
     // dbParam = JSON.stringify(obj);
     function callAjax(dbparam){
@@ -83,9 +118,40 @@ session_start();
         myObj = JSON.parse(this.responseText);
         console.log(myObj);
         console.log(myObj.length);
+        var i;
+        var content = '';
+        for(i = 1; i < myObj.length+1; i++) {
+          content += '<div id="book'+i+'"><img id="img'+i+'" src="" onclick="sendForm('+i+')"><p id="bookname'+i+'"></p><span id="price'+i+'"></span></div>'
+          
+        }
+        i;
+// console.log(content);
+        var d1 = document.getElementById('content');
+        d1.innerHTML = content;
+        // d1.insertAdjacentHTML('afterend', 
+        // '<div id="two">'+content+'</div>'
+        // )
 
+
+        var book = [];var price = [];var img = [];
+        var o;
+
+        for(o = 0; o<myObj.length;o++){
+          book[o] = 'bookname' + (o+1).toString();
+          price[o] = 'price' + (o+1).toString();
+          img[o] = 'img' + (o+1).toString();
+        }
+        // console.log(book);
     var test = 'img1';
-    
+        var p;var scriptContent='';
+        for(p=0;p<myObj.length;p++){
+         scriptContent += 'document.getElementById("bookname'+(p+1)+'").innerHTML = myObj['+p+'].bookname;\ndocument.getElementById("price'+(p+1)+'").innerHTML = "Price: RM" + myObj['+p+'].price;\ndocument.getElementById("img'+(p+1)+'").src = "../" + myObj['+p+'].url;';
+        }
+        // console.log(scriptContent);
+        var d2 = document.getElementById('scripting');
+        d2.innerHTML = scriptContent;
+
+
         //book1
         document.getElementById("bookname1").innerHTML = myObj[0].bookname;
         document.getElementById("price1").innerHTML = "Price: RM" + myObj[0].price;
@@ -113,23 +179,13 @@ session_start();
     xmlhttp.send();
     // xmlhttp.send("x=" + dbParam);
     }
+
+
     callAjax('');
   </script>
 
 
 <br>
-  <?php
-    for($i=1; $i<=$arraylength; $i++){
-      echo 'div num: ' . $i;  
-      echo '
-        <div id="book'.$i.'">
-        <img id="img'.$i.'" src="" onclick="sendForm('.$i.')">
-        <p id="bookname'.$i.'"></p>
-        <span id="price'.$i.'"></span>
-      </div>
-        ';
-    };
-  ?>
 
 
 
