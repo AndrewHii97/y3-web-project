@@ -12,6 +12,7 @@ var xmlhttp = new XMLHttpRequest();
 /*
     function to fetch data from php page as json and convert into array of ojbect 
 */
+
 function requestJson() {
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -254,6 +255,8 @@ function changeTotal(){
     var totalTable = document.getElementById("amount");
     var total = calculateTotal();
     amount.innerHTML = "RM"+total;
+    globalTotal = total;
+    // console.log(test);
     console.log("total changed");
 
 
