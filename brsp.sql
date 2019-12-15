@@ -35,24 +35,25 @@ CREATE TABLE `account` (
   `CONTACT` varchar(11) NOT NULL,
   `ADDRESS` varchar(100) NOT NULL,
   `USERSTATUS` tinyint(1) DEFAULT NULL,
-  `USERPASSWORD` varchar(15) NOT NULL
+  `USERPASSWORD` varchar(15) NOT NULL,
+  `CLIENTID` varchar(50)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `account`
 --
 
-INSERT INTO `account` (`USERID`, `USERNAME`, `EMAIL`, `CONTACT`, `ADDRESS`, `USERSTATUS`, `USERPASSWORD`) VALUES
-(1, 'andrewhii', 'andrewhii@hotmail.com', '1110588215', '95-1-6,Sungai Dua', 1, 'andrewhii'),
-(2, 'Karren', 'karren@hotmail.com', '1110588216', 'Jalan Burma, Pulau Tikus, 10350 George Town, Penang', 1, 'karren'),
-(3, 'Chris', 'sad@hotmail.com', '1110588217', '52, Lorong Usahaniaga 5, Taman Usahaniaga, 14000 Bukit Mertajam, Pulau Pinang', 1, 'chris'),
-(4, 'Kelvin', 'kelvin@hotmail.com', '1110588218', 'No 559, Jalan Sungai Dua, Sri Saujana, 11700 George Town, Pulau Pinang', 1, 'kelvin'),
-(5, 'John', 'john@hotmail.com', '1110588219', '95-1-10,Sungai Dua', 1, 'john'),
-(6, 'Jane', 'jane@hotmail.com', '1110588220', '163A, Gurney Dr, Pulau Tikus, 10250 George Town, Penang', 1, 'jane'),
-(7, 'Max', 'max@hotmail.com', '1110588221', '6L, Jalan Tanjong Tokong, Seri Tanjung Pinang, 10470 Tanjung Tokong, Pulau Pinang', 1, 'max'),
-(8, 'Abu', 'abu@hotmail.com', '1110588222', 'Airmas Condominium, 2A 2B Desa, Jalan Helang, Desa Permai Indah, 11700 Gelugor, Penang', 1, 'abu'),
-(9, 'Ali', 'ali@hotmail.com', '1110588223', 'Desasiswa Tekun M05, Universiti Sains Malaysia, Halaman Bukit Gambir 4, 11700 Gelugor, Pulau Pinang', 1, 'ali'),
-(10, 'Will Smith', 'will@hotmail.com', '1110588224', '95-1-10,Desasiswa Tekun M05, Universiti Sains Malaysia\r\nHalaman Bukit Gambir 4, 11700 Gelugor, Pulau', 1, 'will');
+INSERT INTO `account` (`USERID`, `USERNAME`, `EMAIL`, `CONTACT`, `ADDRESS`, `USERSTATUS`, `USERPASSWORD`, `CLIENTID`) VALUES
+(1, 'andrewhii', 'andrewhii@hotmail.com', '1110588215', '95-1-6,Sungai Dua', 1, 'andrewhii', ''),
+(2, 'Karren', 'karren@hotmail.com', '1110588216', 'Jalan Burma, Pulau Tikus, 10350 George Town, Penang', 1, 'karren','AbVmwoFG00J2ivBqjJWqNuQwwVcmzrNPXs57iYhIoXLdqMInHSZT-tEiF4pdV5DJg6TLgabDKMJub34K'),
+(3, 'Chris', 'sad@hotmail.com', '1110588217', '52, Lorong Usahaniaga 5, Taman Usahaniaga, 14000 Bukit Mertajam, Pulau Pinang', 1, 'chris','AfjZLDYxRgX3lD7nngGfvnjzStZ1Gel5_3XUQcJ2Q4MH0qOdiA1Rl5LUAxdYp15Z86RirLV84B6jEfCV'),
+(4, 'Kelvin', 'kelvin@hotmail.com', '1110588218', 'No 559, Jalan Sungai Dua, Sri Saujana, 11700 George Town, Pulau Pinang', 1, 'kelvin','AZeSuzBNUskU1Hdg-0SyIFNos9IRvQec4YVA77vSWmgdSbxEfqiNP2qlOkqbojX9BHfg_4nCVaPvDI_k'),
+(5, 'John', 'john@hotmail.com', '1110588219', '95-1-10,Sungai Dua', 1, 'john',''),
+(6, 'Jane', 'jane@hotmail.com', '1110588220', '163A, Gurney Dr, Pulau Tikus, 10250 George Town, Penang', 1, 'jane',''),
+(7, 'Max', 'max@hotmail.com', '1110588221', '6L, Jalan Tanjong Tokong, Seri Tanjung Pinang, 10470 Tanjung Tokong, Pulau Pinang', 1, 'max',''),
+(8, 'Abu', 'abu@hotmail.com', '1110588222', 'Airmas Condominium, 2A 2B Desa, Jalan Helang, Desa Permai Indah, 11700 Gelugor, Penang', 1, 'abu',''),
+(9, 'Ali', 'ali@hotmail.com', '1110588223', 'Desasiswa Tekun M05, Universiti Sains Malaysia, Halaman Bukit Gambir 4, 11700 Gelugor, Pulau Pinang', 1, 'ali',''),
+(10, 'Will Smith', 'will@hotmail.com', '1110588224', '95-1-10,Desasiswa Tekun M05, Universiti Sains Malaysia\r\nHalaman Bukit Gambir 4, 11700 Gelugor, Pulau', 1, 'will','');
 
 -- --------------------------------------------------------
 
