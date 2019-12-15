@@ -71,18 +71,7 @@
                 quit();
 
             }
-   
-                // $bookId = "";
-                // $bookName = "";
-                // $bookGenre = "";
-                // $bookAuthor ="";
-                // $bookPublisher = "";
-                // $bookPrice = "";
-                // $bookRentRate ="";
-                // $bookURL = "";
-
-
-            
+ 
         ?>
         <form action="" method="POST">
             <input type="hidden" name="bookid" value="<?php echo $bookId?>">
