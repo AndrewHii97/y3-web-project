@@ -45,12 +45,12 @@
                 
                 echo "$username,$email,$contact,$address,$password";
 
-                // $statement = $conn->prepare("INSERT INTO book (BOOKNAME, GENRE, AUTHOR, PUBLISHER, PRICE, RENT_RATE, BOOKOWNERID,URL) VALUES (?,?,?,?,?,?,?,?)");
-                // $statement->bind_param("ssssddis",$bookName,$bookGenre,$bookAuthor,$bookPublisher,$bookPrice,$bookRentRate,$id,$bookURL);
-                // $statement->execute();
+                $statement = $conn->prepare("INSERT INTO account (USERNAME,EMAIL,CONTACT,ADDRESS,USERPASSWORD,USERSTATUS) VALUES (?,?,?,?,?,1)");
+                $statement->bind_param("sssss",$username,$email,$contact,$address,$password);
+                $statement->execute();
                 echo "<h2>book added succesfully</h2>";
                 // login automatcially
-                close();
+                // close();
                 require ('authen_login.php');
             }
             

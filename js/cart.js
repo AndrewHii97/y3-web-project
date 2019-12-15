@@ -21,6 +21,8 @@ function requestJson() {
             //insert each item into the html text 
             // console.log(myObj);
             myObj.forEach(insertCartItem);
+            // myObj
+            // todo
             addListenerToClass();
             addListenerToClassDel();
             changeTotal();

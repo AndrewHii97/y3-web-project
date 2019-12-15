@@ -17,7 +17,7 @@
         }
         //fetch data with prepared statement 
         //mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-        $statement = $conn->prepare("SELECT DISTINCT book.*, ow.USERNAME FROM account ow inner join(book inner join (account acc inner join cart c on acc.userid = 
+        $statement = $conn->prepare("SELECT DISTINCT book.*, ow.USERNAME,ow.CLIENTID FROM account ow inner join(book inner join (account acc inner join cart c on acc.userid = 
         c.userid) on book.bookid = c.bookid) on ow.userid = book.bookownerid where acc.userid=? ");
         $statement->bind_param("i", $name);  
         

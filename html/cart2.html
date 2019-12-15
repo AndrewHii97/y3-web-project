@@ -65,8 +65,28 @@
                 </table>
                 <div id="paypal-button"></div>
                 <script src="https://www.paypalobjects.com/api/checkout.js"></script>
-                <script>
 
+                
+                <div>
+                    <form id="myForm" action="php/addTransaction.php" method="GET">
+                    <input hidden id="xdata" type="text" name="x" value="">
+                    <input hidden id="ydata" type="text" name="y" value="">
+                    <input hidden id="zdata" type="text" name="z" value="">
+                    <br><br>
+                    <input hidden type="submit" value="Submit">
+                    </form>
+                </div>
+
+
+
+                <script>
+                function sendForm(booknum) {
+                    // BOOKID
+                    // PAYMENT_AMOUNT 
+                    // PAYMENT_DATE
+                    document.getElementById("xdata").value = '';
+                    document.getElementById("myForm").submit();
+                }
                 
                 var globalTotal;
                     paypal.Button.render({
@@ -107,6 +127,7 @@
                                 
                                 // Show a confirmation message to the buyer
                                 window.alert('Thank you for your purchase!');
+
                             });
                         }
                     }, '#paypal-button');
