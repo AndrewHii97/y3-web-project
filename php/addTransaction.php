@@ -44,7 +44,7 @@
             echo "failed";
         }
         $bookPrice = mysqli_fetch_all($result, MYSQLI_ASSOC);
-        $buyPrice = (int)$bookPrice;
+        $buyPrice = (int)$bookPrice[0]['PRICE'];
         
         if(strcmp($obj[$i]['state'],"Buy") == 0){
             $sql3 = "INSERT INTO bookbuy(BOOKID, PAYMENTID, USERID, SELL_PRICE) VALUES ($bookID, $paymentID, $userid, $buyPrice)";
