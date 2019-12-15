@@ -48,7 +48,7 @@
                 $statement = $conn->prepare("INSERT INTO account (USERNAME,EMAIL,CONTACT,ADDRESS,USERPASSWORD,USERSTATUS) VALUES (?,?,?,?,?,1)");
                 $statement->bind_param("sssss",$username,$email,$contact,$address,$password);
                 $statement->execute();
-                echo "<h2>book added succesfully</h2>";
+                echo "<h2>registered succesfully</h2>";
                 // login automatcially
                 // close();
                 require ('authen_login.php');

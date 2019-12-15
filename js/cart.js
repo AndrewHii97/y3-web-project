@@ -23,6 +23,9 @@ function requestJson() {
             myObj.forEach(insertCartItem);
             // myObj
             // todo
+
+
+            
             addListenerToClass();
             addListenerToClassDel();
             changeTotal();

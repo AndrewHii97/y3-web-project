@@ -25,9 +25,43 @@ $_SESSION["id"] = $data['USERID'];
 $_SESSION["username"] = $data['USERNAME'];
 $cookie_name = "userid";
 $cookie_value = $data['USERID'];
+$userid = $data['USERID'];
 setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 echo "Session variables are set.";
-header('Location:../index.php');
+
+date_default_timezone_get('Asia/Kuala Lumpur');
+$today =date('d-m-y');
+
+//add book rent check revert status
+$query = "SELECT * FROM bookrent WHERE userid=$userid and returned='0'";
+echo "<br>".$query;
+$result2 = $connection->query($query);
+
+if (!$result2)
+{
+    echo "failed";
+}
+
+$rentcheck = mysqli_fetch_all($result2, MYSQLI_ASSOC);
+echo "<br>";
+print_r($rentcheck);
+$count = 0;
+foreach($rentcheck as $rent){
+    if($rent['RETURNED_DATE']< $today){
+        $count++;
+    }
+}
+if ( $count > 0 ){
+    $sql ="UPDATE account SET USERSTATUS=0 WHERE userid=$userid";
+    $connection->query($sql);
+}else{
+    $sql ="UPDATE account SET USERSTATUS=1 WHERE userid=$userid";
+    $connection->query($sql);
+}
+
+
+
+// header('Location:../index.php');
 echo "<script type='text/javascript'>alert('Login Credentials verified')</script>";
 
 }else{
