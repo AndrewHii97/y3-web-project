@@ -30,22 +30,10 @@ session_start();
   <span id="Self-Help" onclick="sendCategory('Self-Help')">Self-Help</span>
   <span id="Suspense" onclick="sendCategory('Suspense')">Suspense</span>
 
-  <?php
-    for($i=0; $i<10; $i++){
-        echo '
-        <div id="book.">
-            <img id="img." src="" onclick="sendForm(.)">
-            <p id="bookname."></p>
-            <span id="price."></span>
-        </div>;
-        '
-    }
-  ?>
-
-
-
+<!-- 
 
   <div id="book1">
+
     <img id="img1" src="" onclick="sendForm(1)">
     <p id="bookname1"></p>
     <span id="price1"></span>
@@ -64,7 +52,7 @@ session_start();
     <img id="img4" src="" onclick="sendForm(4)">
     <p id="bookname4"></p>
     <span id="price4"></span>
-  </div>
+  </div> -->
 
   <div>
     <form id="myForm" action="bookDetail.php" method="GET">
@@ -93,8 +81,11 @@ session_start();
     xmlhttp.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
         myObj = JSON.parse(this.responseText);
-        // console.log(myObj);
+        console.log(myObj);
+        console.log(myObj.length);
+
     var test = 'img1';
+    
         //book1
         document.getElementById("bookname1").innerHTML = myObj[0].bookname;
         document.getElementById("price1").innerHTML = "Price: RM" + myObj[0].price;
@@ -124,6 +115,21 @@ session_start();
     }
     callAjax('');
   </script>
+
+
+<br>
+  <?php
+    for($i=1; $i<=$arraylength; $i++){
+      echo 'div num: ' . $i;  
+      echo '
+        <div id="book'.$i.'">
+        <img id="img'.$i.'" src="" onclick="sendForm('.$i.')">
+        <p id="bookname'.$i.'"></p>
+        <span id="price'.$i.'"></span>
+      </div>
+        ';
+    };
+  ?>
 
 
 
