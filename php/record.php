@@ -138,7 +138,7 @@
         
         $id="2";
         $sql=  
-        "select b.BOOKID,b.BOOKNAME,b.GENRE,b.AUTHOR,b.PUBLISHER,b.url,acc.username, 
+        "select b.BOOKID,b.BOOKNAME,b.GENRE,b.AUTHOR,b.PUBLISHER,b.url,acc.username, acc.contact,acc.email,acc.address,
         br.RENT_DATE,br.RETURNED_DATE,br.RENT_PRICE,br.RENT_RATE from  
         bookrent as br join (book as b join account as acc on  b.bookownerid =acc.userid) 
         on br.BOOKID = b.BOOKID where br.userid='$id'";
@@ -153,6 +153,9 @@
             <th>BookImage</th>
             <th>BookName</th>
             <th>BookOwner</th>
+            <th>Contact</th>
+            <th>Address</th>
+            <th>Email</th>
             <th>BookRentRate</th>
             <th>BorrowDate</th>
             <th>DueDate</th>
@@ -169,6 +172,9 @@
                 $bookURL = PREFIX.$book['url'];
                 $bookPublisher =$book['PUBLISHER'];
                 $bookOwner =$book['username'];
+                $bookOwnerContact = $book['contact'];
+                $bookOwnerAddress = $book['address'];
+                $bookOwnerEmail =$book['email'];
                 $return = $book['RENT_DATE'];
                 $rent = $book['RETURNED_DATE'];
                 $rentPrice = $book['RENT_PRICE'];
@@ -183,6 +189,9 @@
                         </form>  
                     </td> 
                     <td>$bookOwner</td>
+                    <td>$bookOwnerContact</td>
+                    <td>$bookOwnerAddress</td>
+                    <Td>$bookOwnerEmail</td>
                     <td>RM $bookRentRate</td>
                     <th>$rent</th>
                     <th>$return</th>

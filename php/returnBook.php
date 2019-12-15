@@ -34,12 +34,13 @@
 
             // $id = $_SESSION['id']; #get the user id from the session
             $id = 1; #stub
-            $sql = "select acc.userid as renterid, acc.username as renterName, 
+            $sql = "select acc.userid as renterid, acc.username as renterName, acc.EMAIL,acc.CONTACT,acc.ADDRESS, 
             b.bookid,b.bookname,b.url,brt.RENT_DATE,brt.RETURNED_DATE,brt.RENT_PRICE,brt.RENT_RATE,brt.RETURNED
             from account as acc join (book as b join bookrent as brt on b.bookid = brt.bookid) 
             on brt.userid = acc.userid where b.bookownerid = '$id' ";
             $result = $conn->query($sql);
             $books = $result->fetch_all($resulttype = MYSQLI_ASSOC);
+    
 
         ?>  
         <table>
@@ -48,6 +49,10 @@
             <tr>
                 <th>book Image</th>
                 <th>book Name</th>
+                <th>Renter Name</th>
+                <th>Renter Contact</th>
+                <th>Renter Email</th>
+                <th>Renter Address</th>
                 <th>Rent Date</th>
                 <th>Due Date</th>
                 <th>Rent Rate</th>
@@ -61,6 +66,9 @@
                 #extract data 
                 $renterId = $book['renterid'];
                 $renterName = $book['renterName'];
+                $renterContact = $book['CONTACT'];
+                $renterEmail = $book['EMAIL'];
+                $renterAddress = $book['ADDRESS'];
                 $bookId = $book['bookid'];
                 $bookName = $book['bookname'];
                 $bookUrl =  PREFIX.$book['url'];
@@ -69,6 +77,7 @@
                 $bookRentPrice = $book['RENT_PRICE'];
                 $bookRentRate = $book['RENT_RATE'];
                 $bookReturned = $book['RETURNED'];
+
                 
                 if(!$bookReturned){
                     echo
@@ -76,6 +85,9 @@
                             <td><img width='50px' alt='$bookUrl' src='$bookUrl'></td>
                             <td>$bookName</td>
                             <td>$renterName</td>
+                            <td>$renterContact</td>
+                            <td>$renterEmail</td>
+                            <td>$renterAddress</td>
                             <td>$bookRentDate</td>
                             <td>$bookReturnDate</td>
                             <td>RM $bookRentPrice </td>
