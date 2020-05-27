@@ -6,7 +6,7 @@ session_start();
 
 <head>
   <meta charset="utf-8" />
-  <title>BRSP</title>
+  <title>BRSPtest</title>
 </head>
 
 <body>
