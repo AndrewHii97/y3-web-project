@@ -1,5 +1,5 @@
 # webEnginering
-CMT322 web engineering group project - BRSP
+CMT322 web engineering group project - Book Rental Service Platform (BRSP)
 
 Repository owner - Sebastian Kong
 
